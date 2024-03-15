@@ -1,0 +1,30 @@
+---
+import Nav from '@/components/Nav.astro'
+import memojiGIF from '@/assets/video/memoji-ruben.webm'
+---
+
+<header class='header wrapper'>
+	<a href='/'>
+		<video autoplay muted>
+			<source src={memojiGIF} type='video/webm' />
+		</video>
+	</a>
+	<Nav />
+</header>
+
+<style>
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: var(--header-height);
+		background-color: var(--neutral-700);
+	}
+	a {
+		max-width: 7rem;
+		min-width: 4rem;
+	}
+
+</style>
+
+<script></script>

@@ -1,0 +1,141 @@
+---
+import HambIcon from '@/components/HambIcon.astro'
+---
+
+<div class="nav-container">
+	<button class='hamb-icon'>
+		<HambIcon />
+	</button>
+	<nav>
+		<ul>
+			<li><a href='/'>Home</a></li>
+			<li><a href='/about'>About</a></li>
+			<!-- <li><a href='/contact'>Contact</a></li> -->
+		</ul>
+	</nav>
+	<div class='background-overlay'></div>
+</div>
+
+<style>
+	.nav-container {
+		height: 3.5rem;
+		aspect-ratio: 1/1;
+		display: grid;
+		place-items: center;
+
+	}
+	button {
+		background-color: unset;
+		border: none;
+		padding: 0;
+	}
+	nav {
+		position: absolute;
+		top: var(--header-height);
+		left: 0;
+		width: 100vw;
+		padding-block: 3rem;
+		transform: scale(1, 0);
+		transform-origin: top center;
+		transition: transform 0.3s ease-in-out;
+		z-index: 999;
+	}
+
+	.show-nav {
+		background-color: var(--neutral-950);
+		transform: scale(1, 1);
+
+		& ul {
+			top: 0;
+			opacity: 1;
+			transition: opacity 0.3s ease-in-out;
+			transition-delay: 200ms;
+		}
+	}
+	.show-background-overlay {
+		position: fixed;
+		top: var(--header-height);
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 2;
+		backdrop-filter: blur(5px);
+	}
+
+	ul {
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		gap: 2rem;
+		font-size: var(--title-small);
+		opacity: 0;
+	}
+
+	@media (width >= 1024px) {
+		.hamb-icon {
+			display: none;
+		}
+
+		nav {
+			transform: scale(1, 1);
+			background-color: unset;
+			position: static;
+			height: unset;
+			width: unset;
+			transition: unset;
+
+			& ul {
+				opacity: 1;
+			}
+		}
+
+		ul {
+			text-align: start;
+			flex-direction: row;
+			font-size: var(--body-medium);
+		}
+		.show-background-overlay {
+			all: unset;
+		}
+	}
+</style>
+
+<script>
+	// When document is loaded, add event listener to the button and execute the function to toggle the menu
+	document.addEventListener('DOMContentLoaded', function () {
+		const button: HTMLElement | null = document.querySelector('.hamb-icon')
+		if (button) {
+			button.addEventListener('click', toggleMenu)
+		}
+	})
+
+	// Function to toggle the menu
+	function toggleMenu(): void {
+		const nav: HTMLElement | null = document.querySelector('nav')
+		const bgOverlay: HTMLElement | null = document.querySelector('.background-overlay')
+		const body: HTMLElement | null = document.body
+		const header: HTMLElement | null = document.querySelector('header')
+		if (nav && bgOverlay) {
+			nav?.classList.toggle('show-nav')
+			header?.classList.toggle('fill-white')
+			bgOverlay?.classList.toggle('show-background-overlay')
+			body?.classList.toggle('no-scroll')
+		}
+	}
+
+	// When the window is resized to desktop close hamburger menu
+	window.addEventListener('resize', function () {
+		if (window.innerWidth >= 1024) {
+			const nav: HTMLElement | null = document.querySelector('nav')
+			const bgOverlay: HTMLElement | null = document.querySelector('.background-overlay')
+			const body: HTMLElement | null = document.body
+
+			if (nav && bgOverlay) {
+				nav?.classList.remove('show')
+				bgOverlay?.classList.remove('show')
+				body?.classList.remove('no-scroll')
+			}
+		}
+	})
+</script>
