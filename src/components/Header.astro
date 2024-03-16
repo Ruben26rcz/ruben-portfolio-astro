@@ -4,9 +4,10 @@ import memojiGIF from '@/assets/video/memoji-ruben.webm'
 ---
 
 <header class='header wrapper'>
-	<a href='/'>
-		<video autoplay muted>
+	<a href='/' aria-label='Go to home button'>
+		<video autoplay muted poster='src/assets/img/memoji-ruben.webp'>
 			<source src={memojiGIF} type='video/webm' />
+			<track src='/assets/captions/captions_en.vtt' kind='captions' srclang='en' label='english-captions' />
 		</video>
 	</a>
 	<Nav />
@@ -18,11 +19,11 @@ import memojiGIF from '@/assets/video/memoji-ruben.webm'
 		justify-content: space-between;
 		align-items: center;
 		height: var(--header-height);
-		background-color: var(--neutral-700);
 	}
 	a {
 		max-width: 7rem;
 		min-width: 4rem;
+		aspect-ratio: 1/1;
 	}
 </style>
 

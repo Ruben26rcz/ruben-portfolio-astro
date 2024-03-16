@@ -3,21 +3,22 @@ const currentDate = new Date()
 const currentYear = currentDate.getFullYear()
 ---
 
-<footer class='footer wrapper'>
+<footer class='wrapper'>
 	<hr />
 	<div class='footer-content'>
-		<nav class='nav'>
+		<nav>
 			<ul>
-				<li><a href=''>Resume</a></li>
-				<li><a href=''>LinkedIn</a></li>
-				<li><a href=''>Github</a></li>
+				<li><a href='src/assets/documents/cv_ruben-castillo_ux-ui.pdf' target='_blank'>Resume</a></li>
+				<li><a href='https://www.linkedin.com/in/rubenzambrana' target='_blank'>LinkedIn</a></li>
+				<li><a href='https://www.github.com/Ruben26rcz' target='_blank'>Github</a></li>
 			</ul>
 		</nav>
-		<nav class='nav'>
+		<nav>
 			<ul>
-				<li><a href='/'>Work</a></li>
+				<li><a href='/'>Home</a></li>
+				<li><a href='/codeground'>CodeGround</a></li>
 				<li><a href='/about'>About</a></li>
-				<!-- <li><a href='/contact'>Contact</a></li> -->
+				<li><a href='/contact'>Contact</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -28,7 +29,7 @@ const currentYear = currentDate.getFullYear()
 </footer>
 
 <style>
-	.footer {
+	footer {
 		padding-top: 6rem;
 		padding-bottom: 2rem;
 	}
@@ -44,14 +45,12 @@ const currentYear = currentDate.getFullYear()
 		padding-bottom: 7rem;
 	}
 
-	.nav ul {
+	nav ul {
 		display: flex;
 		gap: 2.5rem;
 	}
-	nav li {
-		text-decoration: underline 0.5px;
-		text-underline-offset: 0.2rem;
-		text-decoration-color: var(--neutral-400);
+	li:hover {
+		color: var(--primary-400);
 	}
 
 	.signature {

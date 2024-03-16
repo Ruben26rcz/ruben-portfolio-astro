@@ -5,8 +5,20 @@
 <section class='wrapper'>
 	<h1>Hello! 👋 I’m</h1>
 	<div>
-		<img class='ruben-flip' src='/img/ruben-flip.webp' alt='' />
-		<img src='/img/castillo-flip.webp' alt='' />
+		<img
+			class='ruben-flip'
+			src='/img/ruben-flip.webp'
+			alt='airport flipping letters displaying Ruben word'
+			width='1100'
+			height='200'
+		/>
+		<img
+			class='castillo-flip'
+			src='/img/castillo-flip.webp'
+			alt='airport flipping letters displaying Castillo word'
+			width='1700'
+			height='200'
+		/>
 	</div>
 	<p>
 		A <span class='accent'>UX/UI designer</span> 💡 with knowledge in <span class='accent'>Full Stack</span> 💻<br />
@@ -23,11 +35,22 @@
 		padding-bottom: 1.5rem;
 	}
 	img {
-		margin-left: -4.8vw;
+		margin-left: clamp(-50px, -4.8vw, 0px);
 	}
 	.ruben-flip {
 		scale: 0.64705;
 		transform-origin: left;
+		height: auto;
+	}
+
+	.ruben-flip[Attributes Style] {
+		aspect-ratio: auto 11/2;
+	}
+	.castillo-flip {
+		height: auto;
+	}
+	.castillo-flip[Attributes Style] {
+		aspect-ratio: auto 17/2;
 	}
 	.accent {
 		color: var(--primary-300);

@@ -1,5 +1,5 @@
 ---
-import Chip from './Chip.astro'
+import Chip from '@/components/Chip.astro'
 
 import type { CollectionEntry } from 'astro:content'
 
@@ -11,7 +11,7 @@ const { data, slug } = Astro.props.project
 ---
 
 <a href={`/work/${slug}`} class='project-card'>
-	<img src={data.cover} alt={data.cover_alt || ''} loading='lazy' decoding='async' />
+	<img src={data.cover} alt={data.cover_alt || ''} loading='lazy' decoding='async' width='412' height='344' />
 	<h2>{data.title.toUpperCase()}</h2>
 	<div class='chips'>
 		{data.chips.map((chip) => <Chip>{chip}</Chip>)}
@@ -34,6 +34,10 @@ const { data, slug } = Astro.props.project
 	img {
 		object-fit: cover;
 		margin-bottom: 2rem;
+		height: 344px;
+	}
+	img[Attributes Style] {
+		aspect-ratio: auto 103/86;
 	}
 	.chips {
 		display: flex;

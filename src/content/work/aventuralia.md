@@ -4,7 +4,7 @@ title: Aventuralia
 cover: src/assets/img/aventuralia-cover.webp
 cover_alt: aventuralia cover
 description: |
-  Master’s final project.
+  A web for a backpackers travel company
 chips:
   - Research
   - App design

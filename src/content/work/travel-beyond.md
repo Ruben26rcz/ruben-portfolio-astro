@@ -10,12 +10,49 @@ chips:
   - Programming
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+# TRAVEL BEYOND
 
-Integer vitae nibh elit. Suspendisse eget urna eu neque bibendum pharetra. Sed interdum lectus sem, in pulvinar magna dignissim vel. Quisque maximus at urna nec laoreet. Suspendisse potenti. Vestibulum rhoncus sem ut mi pellentesque, in vestibulum erat blandit. Aliquam sodales dui ac maximus consectetur. Duis quis est vehicula, imperdiet nisl nec, fermentum erat. Duis tortor diam, pharetra eu euismod in, vehicula non eros. Curabitur facilisis dui at erat ultrices gravida. In at nunc ultricies, pulvinar mi vel, sagittis mauris. Praesent pharetra posuere purus ac imperdiet. Nulla facilisi.
+## A landing page for a space travel company
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+![Travel Beyond cover image](src/assets/img/travel-beyond-cover.webp)
 
-Mauris sed eros in ex maximus volutpat. Suspendisse potenti. Donec lacinia justo consectetur sagittis tempor. Proin ullamcorper nisi vitae auctor rhoncus. Sed tristique aliquam augue. Pellentesque vitae fringilla ligula. Nulla arcu elit, efficitur eu nunc malesuada, eleifend tincidunt orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer mattis orci in bibendum ultricies. Quisque a dui erat. Phasellus et vulputate ipsum. Proin metus ex, lobortis nec ornare eget, bibendum ut sapien. Aliquam in dolor lobortis, aliquam tellus a, congue augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### ✍️ From content to design
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+Content defines design. The aim of this project was to design the UI of a landing page departing from the content. Usually designers fall in the temptation to use Lorem ipsum default texts. This ends up making wrong design decisions.
+All the structure of this project was made based on the conent.
+
+### 🗂 “Mini” Design System
+
+To be honest, a landing page doesn't need a design system. But I really wanted to design it because I had the desire to start in this world of grouping components like if were going to start a lego project, that's why I name it “mini”.
+![Travel Beyond Design System](src/assets/img/mini-design-system-large.webp)
+
+### 📱 Mobile First & Responsive
+
+Sometimes when we make a desktop UI we end up making impossible designs for smaller devices. This project was developed first in mobile to prevent future headaches trying to fit all the nice and lovely content from desktop into mobile.
+![Travel Beyond cover image](src/assets/img/responsive-travel-beyond.jpg)
+
+<iframe
+  class="figma-proto"
+  width="100%"
+  height="656"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FqKxGGY1aLSOsjrfx9smiKx%2FTravel-Beyond%3Fpage-id%3D42%253A99%26node-id%3D42%253A99%26viewport%3D328%252C48%252C0.42%26scaling%3Dcontain%26starting-point-node-id%3D42%253A101%26hide-ui%3D1"
+  allowfullscreen
+></iframe>
+
+### 🖥 Desktop Prototype
+
+Desktop designs can be more shocking in terms of user experience. Taking in mind the content displayed in mobile I decided to add an interaction of scrolling down with full screen of each section.
+
+<iframe
+  class="figma-proto"
+  width="100%"
+  height="704"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FqKxGGY1aLSOsjrfx9smiKx%2FTravel-Beyond%3Fpage-id%3D42%253A100%26node-id%3D42%253A337%26viewport%3D328%252C48%252C0.11%26scaling%3Dcontain%26starting-point-node-id%3D42%253A337%26hide-ui%3D1"
+  allowfullscreen
+></iframe>
+
+<style>
+  .figma-proto {
+    border: none;
+  }
+  </style>

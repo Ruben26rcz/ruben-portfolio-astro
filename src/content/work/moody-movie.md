@@ -4,7 +4,7 @@ title: Moody Movie
 cover: src/assets/img/moody-movie-cover.webp
 cover_alt: Moody movie app screens
 description: |
-  An e-commerce app for a bookstore.
+  An app that matches your mood with a movie
 chips:
   - Research
   - App design

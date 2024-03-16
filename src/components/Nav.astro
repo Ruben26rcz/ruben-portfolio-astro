@@ -9,8 +9,9 @@ import HambIcon from '@/components/HambIcon.astro'
 	<nav>
 		<ul>
 			<li><a href='/'>Home</a></li>
+			<li><a href='/codeground'>CodeGround</a></li>
 			<li><a href='/about'>About</a></li>
-			<!-- <li><a href='/contact'>Contact</a></li> -->
+			<li><a href='/contact'>Contact</a></li>
 		</ul>
 	</nav>
 	<div class='background-overlay'></div>
@@ -18,8 +19,6 @@ import HambIcon from '@/components/HambIcon.astro'
 
 <style>
 	.nav-container {
-		height: 3.5rem;
-		aspect-ratio: 1/1;
 		display: grid;
 		place-items: center;
 	}
@@ -69,6 +68,9 @@ import HambIcon from '@/components/HambIcon.astro'
 		gap: 2rem;
 		font-size: var(--title-small);
 		opacity: 0;
+	}
+	li:hover {
+		color: var(--primary-400);
 	}
 
 	@media (width >= 1024px) {

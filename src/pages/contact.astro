@@ -1,0 +1,217 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title='Rubén UX/UI - Contact'>
+	<main class='wrapper'>
+		<section class='section wrapper-max'>
+			<div class='boarding-pass__title'>
+				<div class='boarding-pass__place'>
+					<div class='acronym'>IDE</div>
+					<div>
+						<p class='body-small center'>Ind.Design Engineer</p>
+					</div>
+				</div>
+				<img class='airplane' src='src/assets/img/airplane-departure-emoji.png' alt='airplane emoji' />
+				<div class='boarding-pass__place'>
+					<div class='acronym'>UXI</div>
+					<div>
+						<p class='body-small center'>UX/UI Designer</p>
+					</div>
+				</div>
+			</div>
+			<div class='boarding-pass__content'>
+				<div class='boarding-pass__info'>
+					<ul>
+						<li>
+							<div class='body-small'>Name</div>
+							<p>Rubén Castillo</p>
+						</li>
+						<li>
+							<div class='body-small-bold'>From 📍</div>
+							<p>Barcelona</p>
+						</li>
+						<li>
+							<div class='body-small-bold'>email ✉️</div>
+							<p>ruben26rcz@gmail.com</p>
+						</li>
+					</ul>
+					<div class='qr-container'>
+						<img class='qr' src='src/assets/svg/qr-code-rounded.svg' alt='qr contact code' />
+					</div>
+				</div>
+
+				<div class='skills'>
+					<div class='skills__title body-medium-bold'>Soft Skills</div>
+					<div class='skill'>
+						<ul class='bullets'>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-false'></li>
+						</ul>
+						<div class='body-small'>Communication</div>
+					</div>
+					<div class='skill'>
+						<ul class='bullets'>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-false'></li>
+							<li class='bullet-false'></li>
+						</ul>
+						<div class='body-small'>Leadership</div>
+					</div>
+					<div class='skill'>
+						<ul class='bullets'>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-false'></li>
+						</ul>
+						<div class='body-small'>Time Managemnet</div>
+					</div>
+
+					<div class='skill'>
+						<ul class='bullets'>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+						</ul>
+						<div class='body-small'>Curiosity</div>
+					</div>
+				</div>
+				<div class='skills'>
+					<div class='skills__title body-medium-bold'>Hard Skills</div>
+					<div class='skill'>
+						<ul class='bullets'>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-false'></li>
+						</ul>
+						<div class='body-small'>Visual Design</div>
+					</div>
+					<div class='skill'>
+						<ul class='bullets'>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-false'></li>
+							<li class='bullet-false'></li>
+						</ul>
+						<div class='body-small'>Programming</div>
+					</div>
+					<div class='skill'>
+						<ul class='bullets'>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-false'></li>
+						</ul>
+						<div class='body-small'>Research</div>
+					</div>
+
+					<div class='skill'>
+						<ul class='bullets'>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-true'></li>
+							<li class='bullet-false'></li>
+						</ul>
+						<div class='body-small'>3D Modeling</div>
+					</div>
+				</div>
+				<img class='profile-image' src='src/assets/img/profile-photo.png' alt='Photo of ruben' />
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.boarding-pass__title {
+		margin: 0 1rem;
+		padding: 2rem 1.5rem 1.5rem 1.5rem;
+		background-color: var(--primary-400);
+		border-radius: 1.5rem 1.5rem 0 0;
+		color: var(--neutral-900);
+		display: flex;
+		justify-content: space-between;
+	}
+	.acronym {
+		font-size: var(--title-large);
+		font-weight: 900;
+	}
+
+	.airplane {
+		height: 72px;
+	}
+
+	.boarding-pass__place {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.boarding-pass__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 1rem 0 1rem;
+		padding: 1.5rem;
+		background-color: var(--neutral-00);
+		border-radius: 0 0 1.5rem 1.5rem;
+		color: var(--neutral-900);
+	}
+	.boarding-pass__info {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.skills {
+		margin-top: 2rem;
+	}
+
+	.skills__title {
+		margin-bottom: 1rem;
+	}
+
+	.skill {
+		margin-bottom: 1.5rem;
+	}
+
+	.bullets {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		gap: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.bullet-true {
+		height: 7px;
+		border-radius: 100px;
+		background-color: var(--primary-500);
+	}
+
+	.bullet-false {
+		height: 7px;
+		border-radius: 100px;
+		background-color: var(--neutral-100);
+	}
+	.profile-image {
+		object-fit: fill;
+		min-height: 200px;
+		align-self: center;
+	}
+
+	.qr {
+		height: 112px;
+	}
+</style>

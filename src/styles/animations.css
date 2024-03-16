@@ -1,0 +1,46 @@
+.animate_fade-in {
+	animation: move-fade-in 0.7s ease-in forwards;
+	margin-top: 4rem;
+}
+
+@keyframes move-fade-in {
+	0% {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(-1rem);
+	}
+}
+
+.animate_led:hover {
+	animation-name: led-animation;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: forwards;
+}
+
+@keyframes led-animation {
+	from {
+		text-shadow: none;
+	}
+	16% {
+		text-shadow: 0px 0px 5px var(--primary-400);
+	}
+	35% {
+		text-shadow: none;
+	}
+	56% {
+		text-shadow: 0px 0px 5px var(--primary-400);
+	}
+	76% {
+		text-shadow: none;
+	}
+	to {
+		text-shadow: 0px 0px 5px var(--primary-400);
+	}
+}

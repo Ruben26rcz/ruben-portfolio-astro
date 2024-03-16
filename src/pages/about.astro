@@ -1,10 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '@/layouts/Layout.astro'
+import Experience from '@/sections/Experience.astro'
+import InstagramCarousel from '@/components/InstagramCarousel.astro'
 ---
 
-<Layout title='About'>
+<Layout title='Rubén UX/UI - About'>
 	<main>
-		<section>
+		<section class='wrapper'>
 			<h1>🤙 Hey, nice to meet you!</h1>
 			<p>
 				I think, craft, and play between technology and design. As a curious designer I'm looking for new challenges in
@@ -14,8 +16,7 @@ import Layout from '../layouts/Layout.astro'
 				coding. Check my Resume or LinkedIn
 			</p>
 		</section>
-		<section>
-			<h2>What about my career?</h2>
-		</section>
+		<Experience />
+		<!-- <InstagramCarousel /> -->
 	</main>
 </Layout>
