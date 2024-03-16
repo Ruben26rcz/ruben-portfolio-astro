@@ -1,0 +1,48 @@
+---
+import Chip from './Chip.astro'
+
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+	project: CollectionEntry<'work'>
+}
+
+const { data, slug } = Astro.props.project
+---
+
+<a href={`/work/${slug}`} class='project-card'>
+	<img src={data.cover} alt={data.cover_alt || ''} loading='lazy' decoding='async' />
+	<h2>{data.title.toUpperCase()}</h2>
+	<div class='chips'>
+		{data.chips.map((chip) => <Chip>{chip}</Chip>)}
+	</div>
+	<p class='date'>{data.description}</p>
+</a>
+
+<style>
+	.project-card {
+		display: block;
+		background-color: var(--neutral-800);
+		padding: 1rem;
+		border-radius: 0.5rem;
+	}
+	h2 {
+		font-family: 'TexasLED';
+		font-weight: 400;
+		color: var(--primary-400);
+	}
+	img {
+		object-fit: cover;
+		margin-bottom: 2rem;
+	}
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	h2,
+	div {
+		padding-bottom: 1rem;
+	}
+</style>
