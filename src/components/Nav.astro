@@ -1,5 +1,7 @@
 ---
 import HambIcon from '@/components/HambIcon.astro'
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1) // remove the first "/"
 ---
 
 <div class='nav-container'>
@@ -8,10 +10,10 @@ import HambIcon from '@/components/HambIcon.astro'
 	</button>
 	<nav>
 		<ul>
-			<li><a href='/'>Home</a></li>
-			<li><a href='/codeground'>CodeGround</a></li>
-			<li><a href='/about'>About</a></li>
-			<li><a href='/contact'>Contact</a></li>
+			<li><a class={currentPath === '' ? 'active' : ''} href='/'>Home</a></li>
+			<li><a class={currentPath === 'codeground' ? 'active' : ''} href='/codeground'>CodeGround</a></li>
+			<li><a class={currentPath === 'about' ? 'active' : ''} href='/about'>About</a></li>
+			<li><a class={currentPath === 'contact' ? 'active' : ''} href='/contact'>Contact</a></li>
 		</ul>
 	</nav>
 	<div class='background-overlay'></div>
@@ -70,6 +72,9 @@ import HambIcon from '@/components/HambIcon.astro'
 		opacity: 0;
 	}
 	li:hover {
+		color: var(--primary-400);
+	}
+	.active {
 		color: var(--primary-400);
 	}
 

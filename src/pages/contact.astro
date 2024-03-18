@@ -4,45 +4,39 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout title='Rubén UX/UI - Contact'>
 	<main class='wrapper'>
-		<section class='section wrapper-max'>
-			<div class='boarding-pass__title'>
+		<section>
+			<div class='boarding-pass__header'>
 				<div class='boarding-pass__place'>
-					<div class='acronym'>IDE</div>
-					<div>
-						<p class='body-small center'>Ind.Design Engineer</p>
-					</div>
+					<p class='acronym'>UXI</p>
+					<p class='acronym-description'>UX/UI Designer</p>
 				</div>
 				<img class='airplane' src='src/assets/img/airplane-departure-emoji.png' alt='airplane emoji' />
-				<div class='boarding-pass__place'>
-					<div class='acronym'>UXI</div>
-					<div>
-						<p class='body-small center'>UX/UI Designer</p>
-					</div>
+				<div>
+					<p class='acronym'>FSD</p>
+					<p class='acronym-description'>Fullstack Developer</p>
 				</div>
 			</div>
 			<div class='boarding-pass__content'>
 				<div class='boarding-pass__info'>
 					<ul>
 						<li>
-							<div class='body-small'>Name</div>
+							<p class='label'>Name</p>
 							<p>Rubén Castillo</p>
 						</li>
 						<li>
-							<div class='body-small-bold'>From 📍</div>
+							<p class='label'>From 📍</p>
 							<p>Barcelona</p>
 						</li>
 						<li>
-							<div class='body-small-bold'>email ✉️</div>
+							<p class='label'>email ✉️</p>
 							<p>ruben26rcz@gmail.com</p>
 						</li>
 					</ul>
-					<div class='qr-container'>
-						<img class='qr' src='src/assets/svg/qr-code-rounded.svg' alt='qr contact code' />
-					</div>
+					<img class='qr' src='src/assets/svg/qr-code-rounded.svg' alt='qr contact code' />
 				</div>
 
 				<div class='skills'>
-					<div class='skills__title body-medium-bold'>Soft Skills</div>
+					<h3>Soft Skills</h3>
 					<div class='skill'>
 						<ul class='bullets'>
 							<li class='bullet-true'></li>
@@ -51,7 +45,7 @@ import Layout from '../layouts/Layout.astro'
 							<li class='bullet-true'></li>
 							<li class='bullet-false'></li>
 						</ul>
-						<div class='body-small'>Communication</div>
+						<p>Communication</p>
 					</div>
 					<div class='skill'>
 						<ul class='bullets'>
@@ -61,7 +55,7 @@ import Layout from '../layouts/Layout.astro'
 							<li class='bullet-false'></li>
 							<li class='bullet-false'></li>
 						</ul>
-						<div class='body-small'>Leadership</div>
+						<p>Leadership</p>
 					</div>
 					<div class='skill'>
 						<ul class='bullets'>
@@ -71,7 +65,7 @@ import Layout from '../layouts/Layout.astro'
 							<li class='bullet-true'></li>
 							<li class='bullet-false'></li>
 						</ul>
-						<div class='body-small'>Time Managemnet</div>
+						<p>Time Managemnet</p>
 					</div>
 
 					<div class='skill'>
@@ -82,11 +76,11 @@ import Layout from '../layouts/Layout.astro'
 							<li class='bullet-true'></li>
 							<li class='bullet-true'></li>
 						</ul>
-						<div class='body-small'>Curiosity</div>
+						<p>Curiosity</p>
 					</div>
 				</div>
 				<div class='skills'>
-					<div class='skills__title body-medium-bold'>Hard Skills</div>
+					<h3>Hard Skills</h3>
 					<div class='skill'>
 						<ul class='bullets'>
 							<li class='bullet-true'></li>
@@ -95,7 +89,7 @@ import Layout from '../layouts/Layout.astro'
 							<li class='bullet-true'></li>
 							<li class='bullet-false'></li>
 						</ul>
-						<div class='body-small'>Visual Design</div>
+						<p>Visual Design</p>
 					</div>
 					<div class='skill'>
 						<ul class='bullets'>
@@ -105,7 +99,7 @@ import Layout from '../layouts/Layout.astro'
 							<li class='bullet-false'></li>
 							<li class='bullet-false'></li>
 						</ul>
-						<div class='body-small'>Programming</div>
+						<p>Programming</p>
 					</div>
 					<div class='skill'>
 						<ul class='bullets'>
@@ -115,9 +109,8 @@ import Layout from '../layouts/Layout.astro'
 							<li class='bullet-true'></li>
 							<li class='bullet-false'></li>
 						</ul>
-						<div class='body-small'>Research</div>
+						<p>Research</p>
 					</div>
-
 					<div class='skill'>
 						<ul class='bullets'>
 							<li class='bullet-true'></li>
@@ -126,7 +119,7 @@ import Layout from '../layouts/Layout.astro'
 							<li class='bullet-true'></li>
 							<li class='bullet-false'></li>
 						</ul>
-						<div class='body-small'>3D Modeling</div>
+						<p>3D Modeling</p>
 					</div>
 				</div>
 				<img class='profile-image' src='src/assets/img/profile-photo.png' alt='Photo of ruben' />
@@ -136,9 +129,12 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <style>
-	.boarding-pass__title {
-		margin: 0 1rem;
-		padding: 2rem 1.5rem 1.5rem 1.5rem;
+	h3 {
+		font-size: var(--body-medium);
+		padding-bottom: 1rem;
+	}
+	.boarding-pass__header {
+		padding: 1.5rem;
 		background-color: var(--primary-400);
 		border-radius: 1.5rem 1.5rem 0 0;
 		color: var(--neutral-900);
@@ -147,24 +143,20 @@ import Layout from '../layouts/Layout.astro'
 	}
 	.acronym {
 		font-size: var(--title-large);
+		text-align: center;
 		font-weight: 900;
 	}
-
+	.acronym-description {
+		font-size: var(--body-small);
+		text-align: center;
+	}
 	.airplane {
 		height: 72px;
 	}
-
-	.boarding-pass__place {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
 	.boarding-pass__content {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		margin: 0 1rem 0 1rem;
 		padding: 1.5rem;
 		background-color: var(--neutral-00);
 		border-radius: 0 0 1.5rem 1.5rem;
@@ -174,7 +166,10 @@ import Layout from '../layouts/Layout.astro'
 		display: flex;
 		justify-content: space-between;
 	}
-
+	.label {
+		font-weight: 700;
+		font-size: var(--body-small);
+	}
 	.skills {
 		margin-top: 2rem;
 	}
@@ -185,6 +180,9 @@ import Layout from '../layouts/Layout.astro'
 
 	.skill {
 		margin-bottom: 1.5rem;
+		& p {
+			font-size: var(--body-small);
+		}
 	}
 
 	.bullets {

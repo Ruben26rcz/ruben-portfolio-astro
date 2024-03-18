@@ -2,45 +2,37 @@
 
 ---
 
-<section class='container'>
-	<aside class='carousel'>
-		<div class='carousel__wrapper'>
-			<div class='item' id='slide-0'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-1.jpg' alt='' width='418' height='418' />
-			</div>
-			<div class='item' id='slide-1'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-2.jpg' alt='' width='418' height='418' />
-			</div>
-			<div class='item' id='slide-2'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-3.jpg' alt='' width='418' height='418' />
-			</div>
-			<div class='item' id='slide-3'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-4.jpg' alt='' width='418' height='418' />
-			</div>
-			<div class='item' id='slide-4'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-5.jpg' alt='' width='418' height='418' />
-			</div>
-			<div class='item' id='slide-5'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-6.jpg' alt='' width='418' height='418' />
-			</div>
-			<div class='item' id='slide-6'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-7.jpg' alt='' width='418' height='418' />
-			</div>
+<section>
+	<div class='carousel'>
+		<div class='item' id='slide-0'>
+			<img src='src/assets/img/instagram-egypt.png' alt='' width='418' height='418' />
 		</div>
-	</aside>
+		<div class='item' id='slide-1'>
+			<img src='src/assets/img/instagram-thailand.png' alt='' width='418' height='418' />
+		</div>
+		<div class='item' id='slide-2'>
+			<img src='src/assets/img/instagram-argentina.png' alt='' width='418' height='418' />
+		</div>
+		<div class='item' id='slide-3'>
+			<img src='src/assets/img/instagram-egypt.png' alt='' width='418' height='418' />
+		</div>
+		<div class='item' id='slide-4'>
+			<img src='src/assets/img/instagram-thailand.png' alt='' width='418' height='418' />
+		</div>
+		<div class='item' id='slide-5'>
+			<img src='src/assets/img/instagram-argentina.png' alt='' width='418' height='418' />
+		</div>
+		<div class='item' id='slide-6'>
+			<img src='src/assets/img/instagram-thailand.png' alt='' width='418' height='418' />
+		</div>
+	</div>
 	<article class='instagram'>
 		<header class='instagram__header'>
-			<figure>
-				<img src='https://assets.codepen.io/108082/jake-dog.png' alt='Jake Dog' width='42' height='42' />
-				<figcaption>
-					<h4>Jake the Dog</h4>
-				</figcaption>
-			</figure>
+			<img src='src/assets/img/instagram-profile.png' alt='Jake Dog' width='42' height='42' />
+			<h4>ruben26rcz</h4>
 		</header>
-		<section class='instagram__media'>
-			<div class='img'></div>
-		</section>
-		<footer class='instagram__buttons'>
+		<div class='instagram__media'></div>
+		<footer class='instagram__footer'>
 			<div class='left'>
 				<svg
 					class='instagram__icon instagram__icon--heart'
@@ -86,42 +78,6 @@
 </section>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-	@-webkit-keyframes carousel-animate {
-		0% {
-			visibility: hidden;
-			opacity: 0;
-			transform: translateX(200%) scale(0.7);
-		}
-		3%,
-		14.2857142857% {
-			visibility: visible;
-			opacity: 0.8;
-			transform: translateX(100%) scale(0.9);
-		}
-		17.2857142857%,
-		28.5714285714% {
-			visibility: visible;
-			opacity: 1;
-			transform: translateX(0) scale(1);
-		}
-		31.5714285714%,
-		42.8571428571% {
-			visibility: visible;
-			opacity: 0.8;
-			transform: translateX(-100%) scale(0.9);
-		}
-		45.8571428571% {
-			visibility: visible;
-			opacity: 0;
-			transform: translateX(-200%) scale(0.9);
-		}
-		100% {
-			visibility: hidden;
-			opacity: 0;
-			transform: translateX(-200%) scale(0.7);
-		}
-	}
 	@keyframes carousel-animate {
 		0% {
 			visibility: hidden;
@@ -157,168 +113,110 @@
 			transform: translateX(-200%) scale(0.7);
 		}
 	}
-	:root {
-		--light: 0;
-		--max-width-post: 420px;
-		--primary: hsl(calc(64 + 220 * var(--light)), calc(77% - 7% * var(--light)), calc(79% - 56% * var(--light)));
-		--bg: hsl(calc(284 - 220 * var(--light)), calc(70% + 7% * var(--light)), calc(23% + 56% * var(--light)));
-		--text-primary: hsl(calc(60 * var(--light)), calc(19% * var(--light)), calc(97% - 89% * var(--light)));
-		--font-size-md: clamp(1.09rem, 1.42vw + 0.74rem, 1.88rem);
-	}
-
-	*,
-	*::after,
-	*::before {
-		box-sizing: border-box;
-	}
-
-	:root {
-		font-family: 'Inter', sans-serif;
-		color: var(--text-primary);
-		overflow: hidden;
-	}
-	@supports (height: 100dvh) {
-		body {
-			height: 100dvh;
-		}
-	}
-
-	.container {
-		--container-padding-horizontal: 32px;
+	section {
 		position: relative;
-		padding-inline: var(--container-padding-horizontal);
 		display: grid;
 		place-items: center;
-		height: 100%;
+		overflow-x: hidden;
+		padding-inline: 1.5rem;
 	}
-
 	.carousel {
-		pointer-events: none;
 		position: absolute;
-		perspective: 100px;
-		width: 100%;
-	}
-	.carousel__wrapper {
-		position: relative;
 		display: flex;
 		justify-content: center;
 		height: 50vh;
 	}
-	.carousel .item {
+	.carousel img {
 		position: absolute;
 		max-width: 418px;
-		height: 100%;
-		margin-inline: var(--container-padding-horizontal);
 		opacity: 0;
 		will-change: transform, opacity;
-		-webkit-animation: carousel-animate 27s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 		animation: carousel-animate 27s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+		object-fit: cover;
+		height: 100%;
+		margin-inline: 1.5rem;
 	}
-	@media (max-width: 768px) {
-		.carousel .item {
-			margin-inline: calc(var(--container-padding-horizontal) + 1px);
-		}
-	}
-	.carousel .item:nth-child(1) {
+	.carousel img:nth-child(1) {
 		animation-delay: calc(3.8571428571s * -1);
 	}
-	.carousel .item:nth-child(2) {
+	.carousel img:nth-child(2) {
 		animation-delay: calc(3.8571428571s * 0);
 	}
-	.carousel .item:nth-child(3) {
+	.carousel img:nth-child(3) {
 		animation-delay: calc(3.8571428571s * 1);
 	}
-	.carousel .item:nth-child(4) {
+	.carousel img:nth-child(4) {
 		animation-delay: calc(3.8571428571s * 2);
 	}
-	.carousel .item:nth-child(5) {
+	.carousel img:nth-child(5) {
 		animation-delay: calc(3.8571428571s * 3);
 	}
-	.carousel .item:nth-child(6) {
+	.carousel img:nth-child(6) {
 		animation-delay: calc(3.8571428571s * 4);
 	}
-	.carousel .item:last-child {
+	.carousel img:last-child {
 		animation-delay: calc(-3.8571428571s * 2);
 	}
-	.carousel img {
-		max-width: 100%;
-		object-fit: cover;
-		height: 100%;
-	}
-
 	.instagram {
-		--pading-horizontal: 1rem;
-		--border: 1px solid var(--primary);
-		max-width: var(--max-width-post);
+		max-width: 420px;
 		width: 100%;
-		border: var(--border);
-		border-radius: 20px;
+		border: 2px solid var(--neutral-600);
+		border-radius: 1rem;
 	}
 	.instagram__header {
-		height: 4rem;
-		border-bottom: var(--border);
-	}
-	.instagram__header figure {
-		padding-block: 0;
-		padding-inline: var(--pading-horizontal);
-		margin: 0;
 		display: flex;
 		align-items: center;
-		height: 100%;
+		height: 4rem;
+		padding-inline: 1rem;
+		border-bottom: 2px solid var(--neutral-600);
 	}
-	.instagram__header figure img {
+	.instagram__header img {
 		border-radius: 50%;
 		object-fit: cover;
-		border: var(--border);
-		margin-inline-end: 8px;
+		border: 1px solid white;
+		margin-right: 0.5em;
 	}
 	.instagram__media {
-		display: flex;
-		border-bottom: var(--border);
-	}
-	.instagram__media .img {
 		max-width: 100%;
 		height: 50vh;
 	}
-	.instagram__buttons {
+	.instagram__footer {
 		height: 4rem;
-		padding-inline: var(--pading-horizontal);
+		padding-inline: 1em;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		border-top: 2px solid var(--neutral-600);
 	}
-	.instagram__buttons .left {
+	.instagram__footer .left {
 		display: flex;
 		align-items: center;
 	}
-	.instagram__buttons .left svg:nth-of-type(2) {
-		margin-inline: 12px;
+	.instagram__footer .left svg:nth-of-type(2) {
+		margin-inline: 1rem;
 	}
 	.instagram__icon {
 		cursor: pointer;
 		width: 1em;
 		height: 1em;
 		font-size: var(--font-size-md);
-		min-width: 24px;
-		min-height: 24px;
+		min-width: 1.5rem;
+		min-height: 1.5rem;
 	}
 	.instagram__icon:hover {
 		opacity: 0.7;
 	}
 	.instagram__icon path {
-		stroke: var(--primary);
+		stroke: white;
 		stroke-linejoin: round;
 	}
 	.instagram__icon--comment path {
-		stroke-width: 2;
-	}
-	.instagram__icon--message {
-		margin-block-start: 3px;
+		stroke-width: 1;
 	}
 	.instagram__icon--message path {
-		stroke-width: 2;
+		stroke-width: 1;
 	}
 	.instagram__icon--saved path {
-		stroke-width: 2;
+		stroke-width: 1;
 	}
 </style>

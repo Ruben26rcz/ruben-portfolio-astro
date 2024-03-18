@@ -27,20 +27,23 @@
 @keyframes led-animation {
 	from {
 		text-shadow: none;
+		color: var(--primary-600);
 	}
 	16% {
-		text-shadow: 0px 0px 5px var(--primary-400);
+		text-shadow: 0px 0px 5px var(--primary-500);
 	}
 	35% {
 		text-shadow: none;
 	}
 	56% {
 		text-shadow: 0px 0px 5px var(--primary-400);
+		color: var(--primary-500);
 	}
 	76% {
 		text-shadow: none;
 	}
 	to {
-		text-shadow: 0px 0px 5px var(--primary-400);
+		text-shadow: 0px 0px 8px var(--primary-300);
+		color: var(--primary-300);
 	}
 }

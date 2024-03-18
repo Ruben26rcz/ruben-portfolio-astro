@@ -10,4 +10,8 @@ chips:
   - App design
 ---
 
-# An app that suggests movies based on your mood.
+# DATAPET
+
+## The app for dog and cat owners who want to contribute to the health of their pets
+
+![DataPet cover image](src/assets/img/datapet-cover.png)

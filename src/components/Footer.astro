@@ -1,6 +1,8 @@
 ---
 const currentDate = new Date()
 const currentYear = currentDate.getFullYear()
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1) // remove the first "/"
 ---
 
 <footer class='wrapper'>
@@ -15,10 +17,10 @@ const currentYear = currentDate.getFullYear()
 		</nav>
 		<nav>
 			<ul>
-				<li><a href='/'>Home</a></li>
-				<li><a href='/codeground'>CodeGround</a></li>
-				<li><a href='/about'>About</a></li>
-				<li><a href='/contact'>Contact</a></li>
+				<li><a class={currentPath === '' ? 'active' : ''} href='/'>Home</a></li>
+				<li><a class={currentPath === 'codeground' ? 'active' : ''} href='/codeground'>CodeGround</a></li>
+				<li><a class={currentPath === 'about' ? 'active' : ''} href='/about'>About</a></li>
+				<li><a class={currentPath === 'contact' ? 'active' : ''} href='/contact'>Contact</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -50,6 +52,10 @@ const currentYear = currentDate.getFullYear()
 		gap: 2.5rem;
 	}
 	li:hover {
+		color: var(--primary-400);
+	}
+
+	.active {
 		color: var(--primary-400);
 	}
 
