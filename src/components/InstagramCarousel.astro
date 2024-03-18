@@ -88,7 +88,7 @@
 				<p>67 Likes</p>
 				<p>
 					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
-					as the pandemic slowly disappears I will be fastening my seat belt to my next destination. more
+					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
 				</p>
 			</div>
 		</footer>
@@ -97,41 +97,6 @@
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-	@-webkit-keyframes carousel-animate {
-		0% {
-			visibility: hidden;
-			opacity: 0;
-			transform: translateX(200%) scale(0.7);
-		}
-		3%,
-		14.2857142857% {
-			visibility: visible;
-			opacity: 0.8;
-			transform: translateX(100%) scale(0.9);
-		}
-		17.2857142857%,
-		28.5714285714% {
-			visibility: visible;
-			opacity: 1;
-			transform: translateX(0) scale(1);
-		}
-		31.5714285714%,
-		42.8571428571% {
-			visibility: visible;
-			opacity: 0.8;
-			transform: translateX(-100%) scale(0.9);
-		}
-		45.8571428571% {
-			visibility: visible;
-			opacity: 0;
-			transform: translateX(-200%) scale(0.9);
-		}
-		100% {
-			visibility: hidden;
-			opacity: 0;
-			transform: translateX(-200%) scale(0.7);
-		}
-	}
 	@keyframes carousel-animate {
 		0% {
 			visibility: hidden;
@@ -141,7 +106,7 @@
 		3%,
 		14.2857142857% {
 			visibility: visible;
-			opacity: 0.8;
+			opacity: 0.25;
 			transform: translateX(100%) scale(0.9);
 		}
 		17.2857142857%,
@@ -153,7 +118,7 @@
 		31.5714285714%,
 		42.8571428571% {
 			visibility: visible;
-			opacity: 0.8;
+			opacity: 0.25;
 			transform: translateX(-100%) scale(0.9);
 		}
 		45.8571428571% {
@@ -191,7 +156,7 @@
 		position: relative;
 		display: flex;
 		justify-content: center;
-		height: 50vh;
+		height: 40vh;
 	}
 	.carousel .item {
 		position: absolute;
@@ -202,26 +167,6 @@
 		will-change: transform, opacity;
 		animation: carousel-animate 27s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 	}
-	/*
-	@media (width <= 768px) {
-		.carousel .item {
-			margin-inline: calc(var(--container-padding-horizontal) + 2px);
-		}
-		.carousel {
-			margin-top: -9.8rem;
-		}
-	}
-	@media (width < 400px) {
-		.carousel {
-			margin-top: -12.8rem;
-		}
-	}
-	@media (width < 350px) {
-		.carousel {
-			margin-top: -14.3rem;
-		}x
-	}
-	*/
 
 	.carousel .item:nth-child(1) {
 		animation-delay: calc(3.8571428571s * -1);
@@ -285,7 +230,7 @@
 	}
 	.instagram__media .img {
 		max-width: 100%;
-		height: 50vh;
+		height: 40vh;
 	}
 	.instagram__footer {
 		padding-block: 1rem;
@@ -333,9 +278,12 @@
 	}
 
 	h4 {
-		font-size: var(--body-medium);
+		font-size: var(--body-small);
 	}
 	.location {
+		font-size: var(--body-small);
+	}
+	.instagram__comments {
 		font-size: var(--body-small);
 	}
 </style>
