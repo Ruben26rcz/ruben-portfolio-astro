@@ -122,7 +122,6 @@ import Layout from '../layouts/Layout.astro'
 						<p>3D Modeling</p>
 					</div>
 				</div>
-				<img class='profile-image' src='src/assets/img/profile-photo.png' alt='Photo of ruben' />
 			</div>
 		</section>
 	</main>
@@ -173,43 +172,33 @@ import Layout from '../layouts/Layout.astro'
 	.skills {
 		margin-top: 2rem;
 	}
-
 	.skills__title {
 		margin-bottom: 1rem;
 	}
-
 	.skill {
 		margin-bottom: 1.5rem;
 		& p {
 			font-size: var(--body-small);
 		}
 	}
-
 	.bullets {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		gap: 0.5rem;
 		margin-bottom: 0.5rem;
 	}
-
 	.bullet-true {
 		height: 7px;
 		border-radius: 100px;
 		background-color: var(--primary-500);
 	}
-
 	.bullet-false {
 		height: 7px;
 		border-radius: 100px;
 		background-color: var(--neutral-100);
 	}
-	.profile-image {
-		object-fit: fill;
-		min-height: 200px;
-		align-self: center;
-	}
-
 	.qr {
-		height: 112px;
+		max-height: 200px;
+		height: 20vw;
 	}
 </style>

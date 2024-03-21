@@ -85,8 +85,30 @@
 				</div>
 			</div>
 			<div class='instagram__comments'>
-				<p>67 Likes</p>
-				<p>
+				<p id='comment-0'>
+					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
+					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
+				</p>
+				<p id='comment-1'>
+					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
+					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
+				</p>
+				<p id='comment-2'>
+					<strong>ruben26rcz</strong> Potaties are the best food in the world. I love them so much. I could eat them all
+					day
+				</p>
+				<p id='comment-3'>
+					<strong>ruben26rcz</strong> hello darkness my old friend, I've come to talk with you again, because a vision softly
+				</p>
+				<p id='comment-4'>
+					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
+					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
+				</p>
+				<p id='comment-5'>
+					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
+					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
+				</p>
+				<p id='comment-6'>
 					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
 					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
 				</p>
@@ -168,25 +190,25 @@
 		animation: carousel-animate 27s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 	}
 
-	.carousel .item:nth-child(1) {
+	#slide-0 {
 		animation-delay: calc(3.8571428571s * -1);
 	}
-	.carousel .item:nth-child(2) {
+	#slide-1 {
 		animation-delay: calc(3.8571428571s * 0);
 	}
-	.carousel .item:nth-child(3) {
+	#slide-2 {
 		animation-delay: calc(3.8571428571s * 1);
 	}
-	.carousel .item:nth-child(4) {
+	#slide-3 {
 		animation-delay: calc(3.8571428571s * 2);
 	}
-	.carousel .item:nth-child(5) {
+	#slide-4 {
 		animation-delay: calc(3.8571428571s * 3);
 	}
-	.carousel .item:nth-child(6) {
+	#slide-5 {
 		animation-delay: calc(3.8571428571s * 4);
 	}
-	.carousel .item:last-child {
+	#slide-6 {
 		animation-delay: calc(-3.8571428571s * 2);
 	}
 	.carousel img {
@@ -283,7 +305,71 @@
 	.location {
 		font-size: var(--body-small);
 	}
-	.instagram__comments {
+	@keyframes text-animate {
+		0% {
+			visibility: hidden;
+			opacity: 0;
+			/* transform: translateX(200%) scale(0.7); */
+			display: none;
+		}
+		3%,
+		14.2857142857% {
+			visibility: visible;
+			opacity: 0;
+			display: none;
+			/* transform: translateX(100%) scale(0.9); */
+		}
+		17.2857142857%,
+		28.5714285714% {
+			visibility: visible;
+			opacity: 1;
+			display: block;
+			/* transform: translateX(0) scale(1); */
+		}
+		31.5714285714%,
+		42.8571428571% {
+			visibility: visible;
+			opacity: 0;
+			display: none;
+			/* transform: translateX(-100%) scale(0.9); */
+		}
+		45.8571428571% {
+			visibility: visible;
+			opacity: 0;
+			display: none;
+			/* transform: translateX(-200%) scale(0.9); */
+		}
+		100% {
+			visibility: hidden;
+			opacity: 0;
+			display: none;
+			/* transform: translateX(-200%) scale(0.7); */
+		}
+	}
+	:where(.instagram__comments > p) {
 		font-size: var(--body-small);
+		animation: text-animate 27s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+		will-change: display;
+	}
+	#comment-0 {
+		animation-delay: calc(3.8571428571s * -1);
+	}
+	#comment-1 {
+		animation-delay: calc(3.8571428571s * 0);
+	}
+	#comment-2 {
+		animation-delay: calc(3.8571428571s * 1);
+	}
+	#comment-3 {
+		animation-delay: calc(3.8571428571s * 2);
+	}
+	#comment-4 {
+		animation-delay: calc(3.8571428571s * 3);
+	}
+	#comment-5 {
+		animation-delay: calc(3.8571428571s * 4);
+	}
+	#comment-6 {
+		animation-delay: calc(-3.8571428571s * 2);
 	}
 </style>

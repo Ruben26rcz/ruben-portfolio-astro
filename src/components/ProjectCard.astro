@@ -1,5 +1,6 @@
 ---
 import Chip from '@/components/Chip.astro'
+import arrowDiagonal from '@/assets/svg/diagonal-arrow.svg'
 import '../styles/animations.css'
 
 import type { CollectionEntry } from 'astro:content'
@@ -12,8 +13,16 @@ const { data, slug } = Astro.props.project
 ---
 
 <a href={`/work/${slug}`} class='project-card'>
-	<img src={data.cover} alt={data.cover_alt || ''} loading='lazy' decoding='async' width='412' height='344' />
-	<h2>{data.title.toUpperCase()}</h2>
+	<img
+		class='card-image'
+		src={data.cover}
+		alt={data.cover_alt || ''}
+		loading='lazy'
+		decoding='async'
+		width='412'
+		height='344'
+	/>
+	<h2>{data.title.toUpperCase()} <img src={arrowDiagonal.src} alt='diagonal pixel arrow' width='20' height='20' /></h2>
 	<div class='chips'>
 		{data.chips.map((chip) => <Chip>{chip}</Chip>)}
 	</div>
@@ -38,16 +47,24 @@ const { data, slug } = Astro.props.project
 		}
 	}
 	h2 {
+		display: flex;
+		gap: 0.5rem;
 		font-family: 'TexasLED';
 		font-weight: 400;
 		color: var(--primary-400);
+		& img {
+			width: var(--title-small);
+			height: var(--title-small);
+			margin-top: 0.5rem;
+		}
 	}
-	img {
+	.card-image {
 		object-fit: cover;
 		margin-bottom: 2rem;
 		height: 344px;
+		width: 100%;
 	}
-	img[Attributes Style] {
+	.card-image[Attributes Style] {
 		aspect-ratio: auto 103/86;
 	}
 	.chips {

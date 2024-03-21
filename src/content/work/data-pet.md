@@ -15,3 +15,10 @@ chips:
 ## The app for dog and cat owners who want to contribute to the health of their pets
 
 ![DataPet cover image](src/assets/img/datapet-cover.png)
+
+<style>
+  img {
+    object-fit: cover;
+    max-height: 300px;
+  }
+</style>

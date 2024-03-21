@@ -1,24 +1,46 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import Experience from '@/sections/Experience.astro'
-import InstagramCarousel from '@/components/InstagramCarousel.astro'
-import MyInstagramCarousel from '@/components/MyInstagramCarousel.astro'
+import Hobbies from '@/sections/Hobbies.astro'
 ---
 
 <Layout title='Rubén UX/UI - About'>
 	<main>
 		<section class='wrapper'>
 			<h1>🤙 Hey, nice to meet you!</h1>
-			<p>
+			<p class='description'>
 				I think, craft, and play between technology and design. As a curious designer I'm looking for new challenges in
 				order to learn more about myself inside the user experience world. Coming from an Industrial Design background
 				gave me the opportunity to fill my toolbox with Human Centric design methodologies that came in handy when
 				transitioning towards Product Design. I enjoy being involved in the full process of design from research to
-				coding. Check my Resume or LinkedIn
+				coding.
+			</p>
+			<p class='link'>
+				Check my <a href='src/assets/documents/cv_ruben-castillo_ux-ui.pdf' target='_blank'>Resume</a> or <a
+					href='https://www.linkedin.com/in/rubenzambrana'
+					target='_blank'>LinkedIn</a
+				>
 			</p>
 		</section>
 		<Experience />
-		<InstagramCarousel />
-		<!-- <MyInstagramCarousel /> -->
+		<Hobbies />
 	</main>
 </Layout>
+
+<style>
+	section {
+		padding-block: 3rem;
+	}
+	h1 {
+		margin-bottom: 2rem;
+	}
+	.description {
+		margin-bottom: 1.5rem;
+	}
+	a {
+		color: var(--primary-400);
+		&:hover {
+			color: var(--primary-600);
+		}
+	}
+</style>

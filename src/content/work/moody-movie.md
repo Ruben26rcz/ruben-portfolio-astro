@@ -42,3 +42,10 @@ Prototype is a good tool for testing and communicate with the team. Approaching 
   %3Fpage-id%3D655%253A2104%26node-id%3D879%253A2477%26viewport%3D328%252C48%252C0.08%26scaling%3Dscale-down%26starting-point-node-id%3D879%253A2477%26hide-ui%3D1"
   allowfullscreen
 ></iframe>
+
+<style>
+  img {
+    object-fit: fit;
+    max-height: 300px;
+  }
+</style>

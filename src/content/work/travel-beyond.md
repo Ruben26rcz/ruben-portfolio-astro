@@ -10,7 +10,7 @@ chips:
   - Programming
 ---
 
-# TRAVEL BEYOND
+# {frontmatter.title}
 
 ## A landing page for a space travel company
 
@@ -55,4 +55,8 @@ Desktop designs can be more shocking in terms of user experience. Taking in mind
   .figma-proto {
     border: none;
   }
-  </style>
+  img {
+    object-fit: fit;
+    max-height: 300px;
+  }
+</style>
