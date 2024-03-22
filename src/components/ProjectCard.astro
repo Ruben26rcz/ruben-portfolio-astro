@@ -2,31 +2,32 @@
 import Chip from '@/components/Chip.astro'
 import arrowDiagonal from '@/assets/svg/diagonal-arrow.svg'
 import '../styles/animations.css'
-
-import type { CollectionEntry } from 'astro:content'
-
 interface Props {
-	project: CollectionEntry<'work'>
+	work: {
+		id: number
+		slug: string
+		title: string
+		description: string
+		publishDate: string
+		duration: string
+		cover: string
+		cover_alt: string
+		chips: string[]
+		tools: string[]
+		type: string
+	}
 }
 
-const { data, slug } = Astro.props.project
+const { slug, title, chips, description, cover, cover_alt } = Astro.props.work
 ---
 
 <a href={`/work/${slug}`} class='project-card'>
-	<img
-		class='card-image'
-		src={data.cover}
-		alt={data.cover_alt || ''}
-		loading='lazy'
-		decoding='async'
-		width='412'
-		height='344'
-	/>
-	<h2>{data.title.toUpperCase()} <img src={arrowDiagonal.src} alt='diagonal pixel arrow' width='20' height='20' /></h2>
+	<img class='card-image' src={cover} alt={cover_alt || ''} loading='lazy' decoding='async' width='412' height='344' />
+	<h2>{title.toUpperCase()} <img src={arrowDiagonal.src} alt='diagonal pixel arrow' width='20' height='20' /></h2>
 	<div class='chips'>
-		{data.chips.map((chip) => <Chip>{chip}</Chip>)}
+		{chips.map((chip: string) => <Chip>{chip}</Chip>)}
 	</div>
-	<p class='date'>{data.description}</p>
+	<p class='date'>{description}</p>
 </a>
 
 <style>

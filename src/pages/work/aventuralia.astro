@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import works from 'src/data/works.json'
+const work = works.find((work) => work.title === 'Aventuralia')
+import { Image } from 'astro:assets'
+import imgPlates from 'src/assets/img/collage-plates.jpg'
+---
+
+<Layout title={`Ruben UX/UI - ${work?.slug}`}>
+	<main class='wrapper'>
+		<section class='hero-project'>
+			<h1>{work?.title.toUpperCase()}</h1>
+			<h2>{work?.description}</h2>
+			<img src='/img/aventuralia-cover.webp' alt={work?.cover_alt} />
+		</section>
+		<section class='content'>
+			<a
+				class='primary-button'
+				target='_blank'
+				href='https://xd.adobe.com/view/b78f2835-fc1d-4ffd-9ee9-b971e54118a6-e2dc/?fullscreen'>Go to prototype 🖥️</a
+			>
+		</section>
+	</main>
+
+	<style>
+		main {
+			min-height: 100dvh;
+			padding-block: 3rem;
+		}
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+		h2 {
+			margin-block: 1rem;
+		}
+		.hero-project {
+			margin-bottom: 4rem;
+		}
+		.content > * {
+			margin-bottom: 2rem;
+		}
+		.figma-proto {
+			display: none;
+			border: 1px solid var(--neutral-950);
+		}
+		p {
+			margin-block: 1rem;
+		}
+	</style>
+</Layout>

@@ -1,7 +1,6 @@
 ---
 import ProjectCard from '@/components/ProjectCard.astro'
-import { getCollection } from 'astro:content'
-const works = await getCollection('work')
+import works from '@/data/works.json'
 ---
 
 <section class='wrapper'>
@@ -9,7 +8,7 @@ const works = await getCollection('work')
 		{
 			works.map((work) => (
 				<li class='project'>
-					<ProjectCard project={work} />
+					<ProjectCard work={work} />
 				</li>
 			))
 		}

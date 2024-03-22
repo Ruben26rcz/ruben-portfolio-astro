@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import works from 'src/data/works.json'
+const work = works.find((work) => work.title === 'Travel Beyond')
+import { Image } from 'astro:assets'
+import imgDesignSystem from 'src/assets/img/mini-design-system-large.webp'
+---
+
+<Layout title={`Ruben UX/UI - ${work?.slug}`}>
+	<main class='wrapper'>
+		<section class='hero-project'>
+			<h1>{work?.title.toUpperCase()}</h1>
+			<h2>{work?.description}</h2>
+			<img class='cover-img' src='/img/travel-beyond-cover.webp' alt={work?.cover_alt} />
+		</section>
+		<section class='content'>
+			<div>
+				<h3>✍️ From content to design</h3>
+				<p>
+					Content defines design. The aim of this project was to design the UI of a landing page departing from the
+					content. Usually designers fall in the temptation to use Lorem ipsum default texts. This ends up making wrong
+					design decisions. All the structure of this project was made based on the conent.
+				</p>
+			</div>
+			<div>
+				<h3>🗂 “Mini” Design System</h3>
+				<p>
+					To be honest, a landing page doesn't need a design system. But I really wanted to design it because I had the
+					desire to start in this world of grouping components like if were going to start a lego project, that's why I
+					name it “mini”.
+				</p>
+				<Image src={imgDesignSystem} alt='Mini design system of Travel Beyond' />
+			</div>
+			<div>
+				<h3>📱 Mobile First & Responsive</h3>
+				<p>
+					Sometimes when we make a desktop UI we end up making impossible designs for smaller devices. This project was
+					developed first in mobile to prevent future headaches trying to fit all the nice and lovely content from
+					desktop into mobile.
+				</p>
+				<iframe
+					class='figma-proto'
+					width='100%'
+					height='656'
+					src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FqKxGGY1aLSOsjrfx9smiKx%2FTravel-Beyond%3Fpage-id%3D42%253A99%26node-id%3D42%253A99%26viewport%3D328%252C48%252C0.42%26scaling%3Dcontain%26starting-point-node-id%3D42%253A101%26hide-ui%3D1'
+					allowfullscreen></iframe>
+				<a
+					class='secondary-button desktop-hide'
+					href='https://www.figma.com/proto/qKxGGY1aLSOsjrfx9smiKx/Travel-Beyond?page-id=2%3A3&node-id=3%3A126&viewport=359%2C48%2C0.12&scaling=min-zoom&starting-point-node-id=3%3A126&show-proto-sidebar=1'
+					target='_blank'>Go to mobile prototype 📱</a
+				>
+			</div>
+			<div>
+				<h3>🖥 Desktop Prototype</h3>
+				<p>
+					Desktop designs can be more shocking in terms of user experience. Taking in mind the content displayed in
+					mobile I decided to add an interaction of scrolling down with full screen of each section.
+				</p>
+				<iframe
+					class='figma-proto'
+					width='100%'
+					height='704'
+					src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FqKxGGY1aLSOsjrfx9smiKx%2FTravel-Beyond%3Fpage-id%3D42%253A100%26node-id%3D42%253A337%26viewport%3D328%252C48%252C0.11%26scaling%3Dcontain%26starting-point-node-id%3D42%253A337%26hide-ui%3D1'
+					allowfullscreen></iframe>
+				<a
+					class='secondary-button'
+					href='https://www.figma.com/proto/qKxGGY1aLSOsjrfx9smiKx/Travel-Beyond?page-id=2%3A3&node-id=3%3A126&viewport=359%2C48%2C0.12&scaling=min-zoom&starting-point-node-id=3%3A126&show-proto-sidebar=1'
+					target='_blank'>Go to desktop prototype 🖥</a
+				>
+			</div>
+		</section>
+	</main>
+
+	<style>
+		main {
+			min-height: 100dvh;
+			padding-block: 3rem;
+		}
+		.cover-img {
+			width: 100%;
+			object-fit: cover;
+		}
+		img {
+			width: 100%;
+			object-fit: contain;
+			height: auto;
+		}
+		h2 {
+			margin-block: 1rem;
+		}
+		.hero-project {
+			margin-bottom: 4rem;
+		}
+		.content > * {
+			margin-bottom: 2rem;
+		}
+		.figma-proto {
+			display: none;
+			border: 1px solid var(--neutral-950);
+		}
+		p {
+			margin-block: 1rem;
+		}
+		@media (width >= 768px) {
+			.figma-proto {
+				display: block;
+			}
+			a {
+				display: none;
+			}
+		}
+	</style>
+</Layout>
