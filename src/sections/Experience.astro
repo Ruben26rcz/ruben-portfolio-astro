@@ -41,6 +41,7 @@
 <style>
 	.content {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 	}
 	h2 {
@@ -59,5 +60,10 @@
 	}
 	.content div {
 		margin-bottom: 1.5rem;
+	}
+	@media (width >= 768px) {
+		.content {
+			flex-direction: row;
+		}
 	}
 </style>
