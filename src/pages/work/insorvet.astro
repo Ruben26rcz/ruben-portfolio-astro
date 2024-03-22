@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import works from 'src/data/works.json'
+const work = works.find((work) => work.title === 'Insorvet')
+import { Image } from 'astro:assets'
+import imgPlates from 'src/assets/img/collage-plates.jpg'
+---
+
+<Layout title={`Ruben UX/UI - ${work?.slug}`}>
+	<main class='wrapper'>
+		<section class='hero-project'>
+			<h1>{work?.title.toUpperCase()}</h1>
+			<h2>{work?.description}</h2>
+			<img src='/img/insorvet-cover.webp' alt={work?.cover_alt} />
+		</section>
+		<section class='content'>
+			<div>
+				<a
+					class='primary-button'
+					target='_blank'
+					href='https://xd.adobe.com/view/3df71201-90d6-4691-9ba8-43735a076028-68a4/?fullscreen'>Go to prototype 🖥️</a
+				>
+				<p>
+					I started working in Insorvet as an Industrial Design Engineer developing new osteosyntesis plates for pets,
+					and making some cool renders. My curiosity drove me to improve the e-commerce webpage they were using. The
+					service was plenty of funcionality issues where clients get lost very easily. I proposed to the owner the idea
+					to redesign it. This project was planned as an effort-priority chart. The effortless and more prio the needs
+					were faster must be solved.
+				</p>
+			</div>
+			<div>
+				<h3>🎯 The aim</h3>
+				<p>
+					The aim was to remake the actual page in order to design a better user experience and reduce bounce rate. The
+					main problem of the old website was that new visitors didn't trust in the e-commerce as much as the owner
+					would like. There wasn't enough multimedia content to convince the user about the quality of the product.
+				</p>
+			</div>
+			<div>
+				<h3>🔑 The solution</h3>
+				<p>
+					The website was developed with Wordpress and Elementor plugin. At this moment I didn't have the knowledge to
+					achieve such a big programming challenge. I focused in designing the UI in Figma and test with users.
+				</p>
+				<Image src={imgPlates} alt='Render of medical veterinary osteosynthesis plates' />
+			</div>
+		</section>
+	</main>
+
+	<style>
+		main {
+			min-height: 100dvh;
+			padding-block: 3rem;
+		}
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+		h2 {
+			margin-block: 1rem;
+		}
+		.hero-project {
+			margin-bottom: 4rem;
+		}
+		.content > * {
+			margin-bottom: 2rem;
+		}
+		.figma-proto {
+			display: none;
+			border: 1px solid var(--neutral-950);
+		}
+		p {
+			margin-block: 1rem;
+		}
+	</style>
+</Layout>

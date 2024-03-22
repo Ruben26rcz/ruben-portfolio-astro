@@ -1,0 +1,54 @@
+[
+  {
+    "id": 0,
+    "slug": "moody-movie",
+    "title": "Moody Movie",
+    "description": "An app that suggest movies based on your mood",
+    "cover": "/img/moody-movie-cover.webp",
+    "cover_alt": "Multiple screens displaying the app",
+    "publishDate": "2024-02-15T18:21:59.511Z",
+    "duration": "Dec 2023 - Feb 2024",
+    "chips": ["App Design"],
+    "tools": ["Figma", "Figjam"],
+    "type": "Personal"
+  },
+  {
+    "id": 1,
+    "slug": "travel-beyond",
+    "title": "Travel Beyond",
+    "description": "A landing page for a space travel agency",
+    "cover": "/img/travel-beyond-cover.webp",
+    "cover_alt": "Travel Beyond displayed in an IMac screen",
+    "publishDate": "2024-02-15T18:21:59.511Z",
+    "duration": "Dec 2023 - Feb 2024",
+    "chips": ["Web Design"],
+    "tools": ["Figma"],
+    "type": "Personal"
+  },
+  {
+    "id": 2,
+    "slug": "insorvet",
+    "title": "Insorvet",
+    "description": "An e-commerce of medical veterinary instrumental",
+    "cover": "/img/insorvet-cover.webp",
+    "cover_alt": "Insorvet displayed in an IMac screen",
+    "publishDate": "2024-02-15T18:21:59.511Z",
+    "duration": "Dec 2023 - Feb 2024",
+    "chips": ["Research", "Web Design"],
+    "tools": ["Figma", "Miro"],
+    "type": "Company demand"
+  },
+  {
+    "id": 3,
+    "slug": "aventuralia",
+    "title": "Aventuralia",
+    "description": "A web for a travel agency that offers adventure trips",
+    "cover": "/img/aventuralia-cover.webp",
+    "cover_alt": "A person holding a phone",
+    "publishDate": "2024-02-15T18:21:59.511Z",
+    "duration": "Dec 2023 - Feb 2024",
+    "chips": ["Research", "Web Design"],
+    "tools": ["AdobeXD"],
+    "type": "Personal"
+  }
+]
