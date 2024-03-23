@@ -7,7 +7,7 @@ import imgWireframe from 'src/assets/img/moody-movie-wireframe-large.webp'
 import imgDesignSystem from 'src/assets/img/moody-movie-design-system-large.jpg'
 ---
 
-<Layout title={`Ruben UX/UI - ${work?.slug}`}>
+<Layout title={`Ruben UX/UI - ${work?.slug}`} description={work?.description}>
 	<main class='wrapper'>
 		<section class='hero-project'>
 			<h1>{work?.title.toUpperCase()}</h1>
@@ -59,7 +59,7 @@ import imgDesignSystem from 'src/assets/img/moody-movie-design-system-large.jpg'
 				<a
 					class='secondary-button desktop-hide'
 					href='https://www.figma.com/proto/SR7LaqdnAjkv3mlYIy15sP/BAU-Experience-Design---Rub%C3%A9n-Castillo?page-id=655%3A2104&node-id=879%3A2477&viewport=328%2C48%2C0.08&scaling=scale-down&starting-point-node-id=879%3A2477'
-					target='_blank'>Go to prototype 📱</a
+					target='_blank'>Play the prototype 📱</a
 				>
 			</div>
 		</section>
@@ -79,8 +79,14 @@ import imgDesignSystem from 'src/assets/img/moody-movie-design-system-large.jpg'
 			object-fit: contain;
 			height: auto;
 		}
+		h1 {
+			font-family: 'TexasLED';
+			color: var(--primary-400);
+			font-weight: 400;
+		}
 		h2 {
 			margin-block: 1rem;
+			font-weight: 500;
 		}
 		.hero-project {
 			margin-bottom: 4rem;

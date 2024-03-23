@@ -4,7 +4,7 @@ import works from '../../data/works.json'
 const work = works.find((work) => work.title === 'Aventuralia')
 ---
 
-<Layout title={`Ruben UX/UI - ${work?.slug}`}>
+<Layout title={`Ruben UX/UI - ${work?.slug}`} description={work?.description}>
 	<main class='wrapper'>
 		<section class='hero-project'>
 			<h1>{work?.title.toUpperCase()}</h1>
@@ -15,7 +15,7 @@ const work = works.find((work) => work.title === 'Aventuralia')
 			<a
 				class='primary-button'
 				target='_blank'
-				href='https://xd.adobe.com/view/b78f2835-fc1d-4ffd-9ee9-b971e54118a6-e2dc/?fullscreen'>Go to prototype 🖥️</a
+				href='https://xd.adobe.com/view/b78f2835-fc1d-4ffd-9ee9-b971e54118a6-e2dc/?fullscreen'>Play the prototype 🖥️</a
 			>
 		</section>
 	</main>
@@ -29,8 +29,14 @@ const work = works.find((work) => work.title === 'Aventuralia')
 			width: 100%;
 			object-fit: cover;
 		}
+		h1 {
+			font-family: 'TexasLED';
+			color: var(--primary-400);
+			font-weight: 400;
+		}
 		h2 {
 			margin-block: 1rem;
+			font-weight: 500;
 		}
 		.hero-project {
 			margin-bottom: 4rem;

@@ -5,20 +5,26 @@
 <section class='wrapper'>
 	<h1>Hello! 👋 I’m</h1>
 	<div>
-		<img
-			class='ruben-flip'
-			src='/img/ruben-flip.webp'
-			alt='airport flipping letters displaying Ruben word'
-			width='1100'
-			height='200'
-		/>
-		<img
-			class='castillo-flip'
-			src='/img/castillo-flip.webp'
-			alt='airport flipping letters displaying Castillo word'
-			width='1700'
-			height='200'
-		/>
+		<picture>
+			<source media='(min-width:768px)' srcset='/img/ruben-flip.webp' />
+			<img
+				class='ruben-flip'
+				src='/img/ruben-flip-mobile.webp'
+				alt='airport flipping letters displaying Ruben word'
+				width='1100'
+				height='200'
+			/>
+		</picture>
+		<picture>
+			<source media='(min-width:768px)' srcset='/img/castillo-flip.webp' />
+			<img
+				class='castillo-flip'
+				src='/img/castillo-flip-mobile.webp'
+				alt='airport flipping letters displaying Castillo word'
+				width='1700'
+				height='200'
+			/>
+		</picture>
 	</div>
 	<p>
 		A <span class='accent'>UX/UI designer</span> 💡 with knowledge in <span class='accent'>Full Stack</span> 💻<br />

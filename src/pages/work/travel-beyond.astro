@@ -6,7 +6,7 @@ import { Image } from 'astro:assets'
 import imgDesignSystem from 'src/assets/img/mini-design-system-large.webp'
 ---
 
-<Layout title={`Ruben UX/UI - ${work?.slug}`}>
+<Layout title={`Ruben UX/UI - ${work?.title}`} description={work?.description}>
 	<main class='wrapper'>
 		<section class='hero-project'>
 			<h1>{work?.title.toUpperCase()}</h1>
@@ -47,7 +47,7 @@ import imgDesignSystem from 'src/assets/img/mini-design-system-large.webp'
 				<a
 					class='secondary-button desktop-hide'
 					href='https://www.figma.com/proto/qKxGGY1aLSOsjrfx9smiKx/Travel-Beyond?page-id=2%3A3&node-id=3%3A126&viewport=359%2C48%2C0.12&scaling=min-zoom&starting-point-node-id=3%3A126&show-proto-sidebar=1'
-					target='_blank'>Go to mobile prototype 📱</a
+					target='_blank'>Play mobile prototype 📱</a
 				>
 			</div>
 			<div>
@@ -65,7 +65,7 @@ import imgDesignSystem from 'src/assets/img/mini-design-system-large.webp'
 				<a
 					class='secondary-button'
 					href='https://www.figma.com/proto/qKxGGY1aLSOsjrfx9smiKx/Travel-Beyond?page-id=2%3A3&node-id=3%3A126&viewport=359%2C48%2C0.12&scaling=min-zoom&starting-point-node-id=3%3A126&show-proto-sidebar=1'
-					target='_blank'>Go to desktop prototype 🖥</a
+					target='_blank'>Play desktop prototype 🖥</a
 				>
 			</div>
 		</section>
@@ -85,8 +85,14 @@ import imgDesignSystem from 'src/assets/img/mini-design-system-large.webp'
 			object-fit: contain;
 			height: auto;
 		}
+		h1 {
+			font-family: 'TexasLED';
+			color: var(--primary-400);
+			font-weight: 400;
+		}
 		h2 {
 			margin-block: 1rem;
+			font-weight: 500;
 		}
 		.hero-project {
 			margin-bottom: 4rem;
