@@ -1,0 +1,46 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import errorMemoji from '@/assets/img/error-emoji.webp'
+---
+
+<Layout title='Rubén UX/UI - Not Found' description="The page you are looking doesn't exist">
+	<main class='wrapper'>
+		<h1>ERROR 404</h1>
+		<Image src={errorMemoji} alt='Ruben memoji worried' />
+		<div class='content'>
+			<h2>🚧 Sorry, but this page doesn’t exist 🚧</h2>
+			<p>I couldn’t find the page you requested.</p>
+		</div>
+		<a class='primary-button' href='.'>Take me home please 🛫</a>
+	</main>
+</Layout>
+
+<style>
+	main {
+		min-height: calc(100dvh - (var(--header-height) + var(--footer-height)));
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-block: 4rem;
+	}
+	h1 {
+		font-family: 'TexasLED';
+		font-weight: 400;
+		color: var(--primary-400);
+		margin-bottom: 1rem;
+	}
+	img {
+		margin-bottom: 1rem;
+		max-width: 10rem;
+		max-height: 10rem;
+	}
+	.content {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	h2 {
+		font-size: var(--title-small);
+		margin-bottom: 0.5rem;
+	}
+</style>
