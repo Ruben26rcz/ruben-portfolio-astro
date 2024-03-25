@@ -30,7 +30,7 @@
 					<h4>ruben26rcz</h4>
 					<div class='locations'>
 						<p id='location-1'>Giza Pyramids, Egypt</p>
-						<p id='location-2'>Iguazú Waterfalls, Argentina</p>
+						<p id='location-2'>Iguazú, Argentina</p>
 						<p id='location-3'>Broadway, New York</p>
 						<p id='location-4'>Perito Moreno, Argentina</p>
 						<p id='location-5'>Wat Rong Khun, Thailand</p>
@@ -92,10 +92,10 @@
 					<strong>ruben26rcz</strong> Welcome to the jungle 🐆 🌿 <br /> #iguazu #waterfalls
 				</p>
 				<p id='comment-3'>
-					<strong>ruben26rcz</strong> The city that never sleeps 🗽 💨 <br /> #newyork #streetphotography #smoke
+					<strong>ruben26rcz</strong> The city that never sleeps 🗽 💨 <br /> #newyork #streetphotography
 				</p>
 				<p id='comment-4'>
-					<strong>ruben26rcz</strong> It's a lilttle bit cold here 🏔️❄️🏔️ <br /> #peritomoreno #glacier #elcalafate #patagonia
+					<strong>ruben26rcz</strong> It's a lilttle bit cold here 🏔️❄️🏔️ <br /> #patagonia #glacier
 				</p>
 				<p id='comment-5'>
 					<strong>ruben26rcz</strong> Never is enough regarding decoration 👨🏻‍🎨 <br /> #thailand #beach #paradise
@@ -140,6 +140,41 @@
 			visibility: hidden;
 			opacity: 0;
 			transform: translateX(-200%) scale(0.7);
+		}
+	}
+	@-webkit-keyframes carousel-animate {
+		0% {
+			visibility: hidden;
+			opacity: 0;
+			-webkit-transform: translateX(200%) scale(0.7);
+		}
+		2%,
+		20% {
+			visibility: visible;
+			opacity: 0.25;
+			-webkit-transform: translateX(100%) scale(0.9);
+		}
+		22%,
+		40% {
+			visibility: visible;
+			opacity: 1;
+			-webkit-transform: translateX(0) scale(1);
+		}
+		42%,
+		60% {
+			visibility: visible;
+			opacity: 0.25;
+			-webkit-transform: translateX(-100%) scale(0.9);
+		}
+		62% {
+			visibility: visible;
+			opacity: 0;
+			-webkit-transform: translateX(-200%) scale(0.9);
+		}
+		100% {
+			visibility: hidden;
+			opacity: 0;
+			-webkit-transform: translateX(-200%) scale(0.7);
 		}
 	}
 	section {
@@ -284,33 +319,60 @@
 		font-size: var(--body-small);
 	}
 
-	@keyframes text-animate {
+	@keyframes comment-animate {
 		0%,
 		21% {
 			display: none;
 			opacity: 0;
+			height: 0;
 		}
 		22%,
 		40% {
 			display: block;
 			opacity: 1;
+			height: auto;
 		}
 		41%,
 		100% {
 			display: none;
 			opacity: 0;
+			height: 0;
 		}
 	}
-
+	@keyframes location-animate {
+		0%,
+		21% {
+			display: none;
+			opacity: 0;
+			height: 0;
+		}
+		22%,
+		40% {
+			display: block;
+			opacity: 1;
+			height: '*';
+		}
+		41%,
+		100% {
+			display: none;
+			opacity: 0;
+			height: 0;
+		}
+	}
+	.instagram__comments {
+		height: calc(var(--body-small) * 4.5);
+	}
+	figcaption {
+		margin-top: -1.3rem;
+	}
 	.instagram__comments > p {
 		font-size: var(--body-small);
-		animation: text-animate 30s cubic-bezier(0.37, 0, 0.63, 1) infinite;
-		will-change: display;
+		animation: comment-animate 30s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+		transform-origin: center;
 	}
 	.locations > p {
 		font-size: var(--body-small);
-		animation: text-animate 30s cubic-bezier(0.37, 0, 0.63, 1) infinite;
-		will-change: display;
+		animation: location-animate 30s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 	}
 	#location-1,
 	#comment-1 {
