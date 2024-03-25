@@ -5,26 +5,20 @@
 <section class='container'>
 	<aside class='carousel'>
 		<div class='carousel__wrapper'>
-			<div class='item' id='slide-0'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-1.jpg' alt='' width='418' height='418' />
-			</div>
 			<div class='item' id='slide-1'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-2.jpg' alt='' width='418' height='418' />
+				<img src='src/assets/img/instagram-perito-moreno.png' alt='' width='418' height='418' />
 			</div>
 			<div class='item' id='slide-2'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-3.jpg' alt='' width='418' height='418' />
+				<img src='src/assets/img/instagram-thailand.png' alt='' width='418' height='418' />
 			</div>
 			<div class='item' id='slide-3'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-4.jpg' alt='' width='418' height='418' />
+				<img src='src/assets/img/instagram-egypt.png' alt='' width='418' height='418' />
 			</div>
 			<div class='item' id='slide-4'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-5.jpg' alt='' width='418' height='418' />
+				<img src='src/assets/img/instagram-iguazu.png' alt='' width='418' height='418' />
 			</div>
 			<div class='item' id='slide-5'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-6.jpg' alt='' width='418' height='418' />
-			</div>
-			<div class='item' id='slide-6'>
-				<img src='https://assets.codepen.io/108082/jake-and-fin-7.jpg' alt='' width='418' height='418' />
+				<img src='src/assets/img/instagram-new-york.png' alt='' width='418' height='418' />
 			</div>
 		</div>
 	</aside>
@@ -34,7 +28,13 @@
 				<img src='src/assets/img/instagram-profile.png' alt='ruben instagram profile image' width='40' height='40' />
 				<figcaption>
 					<h4>ruben26rcz</h4>
-					<p class='location'>Barcelona</p>
+					<div class='locations'>
+						<p id='location-1'>Giza Pyramids, Egypt</p>
+						<p id='location-2'>Iguazú Waterfalls, Argentina</p>
+						<p id='location-3'>Broadway, New York</p>
+						<p id='location-4'>Perito Moreno, Argentina</p>
+						<p id='location-5'>Wat Rong Khun, Thailand</p>
+					</div>
 				</figcaption>
 			</figure>
 		</header>
@@ -85,32 +85,20 @@
 				</div>
 			</div>
 			<div class='instagram__comments'>
-				<p id='comment-0'>
-					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
-					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
-				</p>
 				<p id='comment-1'>
-					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
-					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
+					<strong>ruben26rcz</strong> Discovering the mysteries of the Pharaohs 🐪 🪲 <br /> #egypt #pyramids #desert #camel
 				</p>
 				<p id='comment-2'>
-					<strong>ruben26rcz</strong> Potaties are the best food in the world. I love them so much. I could eat them all
-					day
+					<strong>ruben26rcz</strong> Welcome to the jungle 🐆 🌿 <br /> #iguazu #waterfalls
 				</p>
 				<p id='comment-3'>
-					<strong>ruben26rcz</strong> hello darkness my old friend, I've come to talk with you again, because a vision softly
+					<strong>ruben26rcz</strong> The city that never sleeps 🗽 💨 <br /> #newyork #streetphotography #smoke
 				</p>
 				<p id='comment-4'>
-					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
-					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
+					<strong>ruben26rcz</strong> It's a lilttle bit cold here 🏔️❄️🏔️ <br /> #peritomoreno #glacier #elcalafate #patagonia
 				</p>
 				<p id='comment-5'>
-					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
-					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
-				</p>
-				<p id='comment-6'>
-					<strong>ruben26rcz</strong> Travelling is a way of feeding my mind with new perspectives and knowledge. As soon
-					as the pandemic slowly disappears I will be fastening my seat belt to my next destination.
+					<strong>ruben26rcz</strong> Never is enough regarding decoration 👨🏻‍🎨 <br /> #thailand #beach #paradise
 				</p>
 			</div>
 		</footer>
@@ -125,25 +113,25 @@
 			opacity: 0;
 			transform: translateX(200%) scale(0.7);
 		}
-		3%,
-		14.2857142857% {
+		2%,
+		20% {
 			visibility: visible;
 			opacity: 0.25;
 			transform: translateX(100%) scale(0.9);
 		}
-		17.2857142857%,
-		28.5714285714% {
+		22%,
+		40% {
 			visibility: visible;
 			opacity: 1;
 			transform: translateX(0) scale(1);
 		}
-		31.5714285714%,
-		42.8571428571% {
+		42%,
+		60% {
 			visibility: visible;
 			opacity: 0.25;
 			transform: translateX(-100%) scale(0.9);
 		}
-		45.8571428571% {
+		62% {
 			visibility: visible;
 			opacity: 0;
 			transform: translateX(-200%) scale(0.9);
@@ -178,7 +166,7 @@
 		position: relative;
 		display: flex;
 		justify-content: center;
-		height: 40vh;
+		height: 45vh;
 	}
 	.carousel .item {
 		position: absolute;
@@ -187,29 +175,22 @@
 		margin-inline: var(--container-padding-horizontal);
 		opacity: 0;
 		will-change: transform, opacity;
-		animation: carousel-animate 27s cubic-bezier(0.37, 0, 0.63, 1) infinite;
-	}
-
-	#slide-0 {
-		animation-delay: calc(3.8571428571s * -1);
+		animation: carousel-animate 30s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 	}
 	#slide-1 {
-		animation-delay: calc(3.8571428571s * 0);
+		animation-delay: calc(6s * -1);
 	}
 	#slide-2 {
-		animation-delay: calc(3.8571428571s * 1);
+		animation-delay: calc(6s * 0);
 	}
 	#slide-3 {
-		animation-delay: calc(3.8571428571s * 2);
+		animation-delay: calc(6s * 1);
 	}
 	#slide-4 {
-		animation-delay: calc(3.8571428571s * 3);
+		animation-delay: calc(6s * 2);
 	}
 	#slide-5 {
-		animation-delay: calc(3.8571428571s * 4);
-	}
-	#slide-6 {
-		animation-delay: calc(-3.8571428571s * 2);
+		animation-delay: calc(-6s * 2);
 	}
 	.carousel img {
 		max-width: 100%;
@@ -219,7 +200,7 @@
 
 	.instagram {
 		--pading-horizontal: 1rem;
-		--border: 2px solid var(--neutral-500);
+		--border: 2px solid var(--neutral-600);
 		max-width: var(--max-width-post);
 		width: 100%;
 		border: var(--border);
@@ -252,7 +233,7 @@
 	}
 	.instagram__media .img {
 		max-width: 100%;
-		height: 40vh;
+		height: 45vh;
 	}
 	.instagram__footer {
 		padding-block: 1rem;
@@ -302,74 +283,53 @@
 	h4 {
 		font-size: var(--body-small);
 	}
-	.location {
-		font-size: var(--body-small);
-	}
+
 	@keyframes text-animate {
-		0% {
-			visibility: hidden;
-			opacity: 0;
-			/* transform: translateX(200%) scale(0.7); */
+		0%,
+		21% {
 			display: none;
-		}
-		3%,
-		14.2857142857% {
-			visibility: visible;
 			opacity: 0;
-			display: none;
-			/* transform: translateX(100%) scale(0.9); */
 		}
-		17.2857142857%,
-		28.5714285714% {
-			visibility: visible;
-			opacity: 1;
+		22%,
+		40% {
 			display: block;
-			/* transform: translateX(0) scale(1); */
+			opacity: 1;
 		}
-		31.5714285714%,
-		42.8571428571% {
-			visibility: visible;
-			opacity: 0;
-			display: none;
-			/* transform: translateX(-100%) scale(0.9); */
-		}
-		45.8571428571% {
-			visibility: visible;
-			opacity: 0;
-			display: none;
-			/* transform: translateX(-200%) scale(0.9); */
-		}
+		41%,
 		100% {
-			visibility: hidden;
-			opacity: 0;
 			display: none;
-			/* transform: translateX(-200%) scale(0.7); */
+			opacity: 0;
 		}
 	}
-	:where(.instagram__comments > p) {
+
+	.instagram__comments > p {
 		font-size: var(--body-small);
-		animation: text-animate 27s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+		animation: text-animate 30s cubic-bezier(0.37, 0, 0.63, 1) infinite;
 		will-change: display;
 	}
-	#comment-0 {
-		animation-delay: calc(3.8571428571s * -1);
+	.locations > p {
+		font-size: var(--body-small);
+		animation: text-animate 30s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+		will-change: display;
 	}
+	#location-1,
 	#comment-1 {
-		animation-delay: calc(3.8571428571s * 0);
+		animation-delay: calc(6s * -4); /* perito moreno */
 	}
+	#location-2,
 	#comment-2 {
-		animation-delay: calc(3.8571428571s * 1);
+		animation-delay: calc(6s * -3); /* thailand */
 	}
+	#location-3,
 	#comment-3 {
-		animation-delay: calc(3.8571428571s * 2);
+		animation-delay: calc(6s * -2); /* egypt */
 	}
+	#location-4,
 	#comment-4 {
-		animation-delay: calc(3.8571428571s * 3);
+		animation-delay: calc(6s * -1); /* iguazu */
 	}
+	#location-5,
 	#comment-5 {
-		animation-delay: calc(3.8571428571s * 4);
-	}
-	#comment-6 {
-		animation-delay: calc(-3.8571428571s * 2);
+		animation-delay: calc(6s * 0); /* new york */
 	}
 </style>
