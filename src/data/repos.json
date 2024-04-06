@@ -1,0 +1,109 @@
+[
+  {
+    "id": 0,
+    "title": "Computech",
+    "description": "A responsive marketplace of gaming products for demanding gamers with their setup. UI designed by me 🙌",
+    "cover": "src/assets/img/computech-cover.jpg",
+    "cover_alt": "Screenshot of computech",
+    "GIFCover": "src/assets/img/computech-GIF.gif",
+    "GIFCover_alt": "GIF of computech",
+    "publishDate": "2024-02-15T18:21:59.511Z",
+    "technologies": {
+      "front": ["React", "JavaScript", "Ant Design", "Stripe", "Cloudinary"],
+      "back": ["Express (nodeJS)", "JWT", "Stripe API"],
+      "database": ["MongoDB"],
+      "testing": ["Cypress", "Jest"]
+    },
+    "links": [
+      {
+        "name": "Go to site",
+        "url": "https://computech-store.netlify.app",
+        "icon": "Globe"
+      },
+      {
+        "name": "Go to repo",
+        "url": "https://github.com/nds-fsd/pccomponentes",
+        "icon": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "MenuBot",
+    "description": "A webapp for managing orders via telegram",
+    "cover": "src/assets/img/menubot-cover.jpg",
+    "cover_alt": "Screenshot of MenuBot",
+    "GIFCover": "src/assets/img/menubot-gif.gif",
+    "GIFCover_alt": "GIF of MenuBot",
+    "publishDate": "2024-02-15T18:21:59.511Z",
+    "technologies": {
+      "front": ["React", "TypeScript", "Ant Design"],
+      "back": ["Express (nodeJS)", "Telegram API"],
+      "database": ["MongoDB"],
+      "testing": []
+    },
+    "links": [
+      {
+        "name": "Go to repo",
+        "url": "https://github.com/Ruben26rcz/menu-bot",
+        "icon": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "To Do List",
+    "description": "Another todo list webapp for manage daily tasks",
+    "cover": "src/assets/img/todo-cover.png",
+    "cover_alt": "Screenshot of To Do app",
+    "GIFCover": "src/assets/img/to-do-GIF.gif",
+    "GIFCover_alt": "GIF of the to do app",
+    "publishDate": "2024-02-15T18:21:59.511Z",
+    "technologies": {
+      "front": ["React"],
+      "back": ["Express (nodeJS)"],
+      "database": ["MongoDB"],
+      "testing": []
+    },
+    "links": [
+      {
+        "name": "Frontend repo",
+        "url": "https://github.com/nds-fsd/reto-6-todo-app-Ruben26rcz",
+        "icon": "GitHub"
+      },
+      {
+        "name": "API repo",
+        "url": "https://github.com/nds-fsd/reto-5-todo-api-Ruben26rcz",
+        "icon": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Calculator",
+    "description": "Both React and Vanilla JS",
+    "cover": "src/assets/img/calculator-cover-test.png",
+    "cover_alt": "screenshot of the calculator",
+    "GIFCover": "src/assets/img/calculator-GIF.gif",
+    "GIFCover_alt": "GIF of the calculator working",
+    "publishDate": "2024-02-15T18:21:59.511Z",
+    "technologies": {
+      "front": ["React", "Vanilla JavaScript"],
+      "back": [],
+      "database": [],
+      "testing": []
+    },
+    "links": [
+      {
+        "name": "React repo",
+        "url": "https://github.com/nds-fsd/reto-4-react-calculator-Ruben26rcz",
+        "icon": "GitHub"
+      },
+      {
+        "name": "VanillaJS repo",
+        "url": "https://github.com/nds-fsd/reto-3-calculadora-simple-Ruben26rcz",
+        "icon": "GitHub"
+      }
+    ]
+  }
+]

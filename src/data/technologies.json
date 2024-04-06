@@ -1,0 +1,98 @@
+[
+  {
+    "id": 0,
+    "name": "React",
+    "img": "src/assets/svg/react.svg",
+    "alt_img": "react logo"
+  },
+  {
+    "id": 1,
+    "name": "node",
+    "img": "src/assets/svg/node.svg",
+    "alt_img": "node logo"
+  },
+  {
+    "id": 2,
+    "name": "MongoDB",
+    "img": "src/assets/svg/mongodb.svg",
+    "alt_img": "mongodb logo"
+  },
+  {
+    "id": 4,
+    "name": "JavaScript",
+    "img": "src/assets/svg/javascript.svg",
+    "alt_img": "javascript logo"
+  },
+  {
+    "id": 5,
+    "name": "Ant Design",
+    "img": "src/assets/svg/ant-design.svg",
+    "alt_img": "ant design logo"
+  },
+  {
+    "id": 6,
+    "name": "Stripe",
+    "img": "src/assets/svg/stripe.svg",
+    "alt_img": "stripe logo"
+  },
+  {
+    "id": 7,
+    "name": "Stripe API",
+    "img": "src/assets/svg/stripe.svg",
+    "alt_img": "stripe API logo"
+  },
+  {
+    "id": 8,
+    "name": "Cloudinary",
+    "img": "src/assets/svg/cloudinary.svg",
+    "alt_img": "cloudinary logo"
+  },
+  {
+    "id": 9,
+    "name": "JWT",
+    "img": "src/assets/svg/jwt.svg",
+    "alt_img": "json web token logo"
+  },
+  {
+    "id": 10,
+    "name": "Cypress",
+    "img": "src/assets/svg/cypress.svg",
+    "alt_img": "cypress logo"
+  },
+  {
+    "id": 11,
+    "name": "GitHub",
+    "img": "src/assets/svg/github.svg",
+    "alt_img": "github logo"
+  },
+  {
+    "id": 12,
+    "name": "TypeScript",
+    "img": "src/assets/svg/typescript.svg",
+    "alt_img": "typescript logo"
+  },
+  {
+    "id": 13,
+    "name": "Telegram API",
+    "img": "src/assets/svg/telegram.svg",
+    "alt_img": "telegram logo"
+  },
+  {
+    "id": 13,
+    "name": "Jest",
+    "img": "src/assets/svg/jest.svg",
+    "alt_img": "jest logo"
+  },
+  {
+    "id": 14,
+    "name": "Vanilla JavaScript",
+    "img": "src/assets/svg/javascript.svg",
+    "alt_img": "javascript logo"
+  },
+  {
+    "id": 15,
+    "name": "Express (nodeJS)",
+    "img": "src/assets/svg/express.svg",
+    "alt_img": "express logo"
+  }
+]

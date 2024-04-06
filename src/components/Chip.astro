@@ -1,8 +1,16 @@
 ---
-
+const { avatar, src, alt_img } = Astro.props
+interface Props {
+	avatar: boolean
+	src?: string
+	alt_img?: string | undefined
+}
 ---
 
-<span class='chip'><slot /></span>
+<span class='chip'>
+	{avatar && <img src={src} alt={alt_img} />}
+	<slot />
+</span>
 
 <style>
 	.chip {
@@ -12,7 +20,9 @@
 		font-size: var(--body-small);
 		padding: 0 0.5rem;
 		border-radius: 0.5rem;
-		border: 0.5px solid var(--neutral-700);
 		background-color: var(--neutral-500);
+	}
+	img {
+		margin-right: 0.5rem;
 	}
 </style>

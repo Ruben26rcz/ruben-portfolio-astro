@@ -1,9 +1,78 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '@/layouts/Layout.astro'
+import Chip from '@/components/Chip.astro'
+import ReposList from '@/sections/ReposList.astro'
 ---
 
 <Layout title='Ruben UX/UI - CodeGround' description='A UX/UI designer based in Barcelona'>
 	<main class='wrapper'>
-		<h1>Codeground under construction 🚧</h1>
+		<section class='hero'>
+			<h1><span>&lt;h1&gt;</span>Welcome to <span id='accent'>CodeGround</span>!👨🏻‍💻<span>&lt;/h1&gt;</span></h1>
+			<h2><span>console.log(</span>Here you will see the most relevant coding projects<span>”)</span></h2>
+			<div class='text-css'>
+				<p>.project-list &#123;</p>
+				<div>
+					<p>display:</p>
+					<p id='relevant-text'>
+						Mainly done in MERN <span id='mern-chips'>
+							(<Chip avatar={true} src='src/assets/svg/mongodb.svg' alt_img='MongoDB logo'>MongoDB</Chip>
+							<Chip avatar={true} src='src/assets/svg/express.svg' alt_img='Express logo'>Express</Chip>
+							<Chip avatar={true} src='src/assets/svg/react.svg' alt_img='React logo'>React</Chip>
+							<Chip avatar={true} src='src/assets/svg/node.svg' alt_img='NodeJS logo'>NodeJS</Chip>)
+						</span> stack;
+					</p>
+				</div>
+				<p>&#125;</p>
+			</div>
+		</section>
+		<ReposList />
+		<section class='postdata'>
+			<p>Maybe you didn’t notice but this portfolio is done with</p>
+			<Chip avatar={true} src='src/assets/svg/astro.svg' alt_img='astro logo'>Astro</Chip>
+		</section>
 	</main>
 </Layout>
+
+<style>
+	.hero {
+		padding-block: 2rem;
+		& > *:not(:last-child) {
+			margin-bottom: 1.5rem;
+		}
+		& span {
+			color: var(--neutral-500);
+		}
+	}
+	#mern-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		color: var(--neutral-50);
+	}
+	#accent {
+		color: var(--primary-400);
+	}
+	.text-css {
+		& div {
+			padding-left: 2rem;
+			display: flex;
+			gap: 0.5rem;
+		}
+		& p:not(#relevant-text) {
+			color: var(--neutral-500);
+		}
+	}
+	h1 {
+		font-size: var(--title-medium);
+	}
+	h2 {
+		font-size: var(--title-small);
+	}
+	.postdata {
+		text-align: center;
+		padding-block: 2rem;
+		& > p {
+			padding-bottom: 1rem;
+		}
+	}
+</style>

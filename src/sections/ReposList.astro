@@ -1,0 +1,30 @@
+---
+import repos from '@/data/repos.json'
+import RepoCard from '@/components/RepoCard.astro'
+---
+
+<section>
+	<ul>
+		{
+			repos.map((repo) => (
+				<li>
+					<RepoCard repo={repo} />
+				</li>
+			))
+		}
+	</ul>
+</section>
+
+<style>
+	section {
+		padding-block: 2rem;
+	}
+	ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(336px, 1fr));
+		gap: 1.5rem;
+	}
+	ul :first-of-type(a) svg {
+		display: none;
+	}
+</style>

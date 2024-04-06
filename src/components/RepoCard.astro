@@ -1,0 +1,249 @@
+---
+import Chip from '@/components/Chip.astro'
+import '@/styles/animations.css'
+import technologiesImg from '@/data/technologies.json'
+interface Technology {
+	front: string[]
+	back: string[]
+	database: string[]
+	testing: string[]
+}
+
+interface Links {
+	name: string
+	url: string
+	icon: string
+}
+
+interface Repo {
+	id: number
+	title: string
+	description: string
+	cover: string
+	cover_alt: string
+	GIFCover: string
+	GIFCover_alt: string
+	publishDate: string
+	technologies: Technology
+	links: Links[]
+}
+
+const { title, description, cover, cover_alt, GIFCover, GIFCover_alt, technologies, links } = Astro.props.repo
+---
+
+<div class='repo-card'>
+	<div>
+		<div class='images'>
+			<img
+				class='card-image'
+				src={cover}
+				alt={cover_alt || ''}
+				loading='lazy'
+				decoding='async'
+				width='412'
+				height='344'
+			/>
+			<img
+				class='gif-image'
+				src={GIFCover}
+				alt={GIFCover_alt || ''}
+				loading='lazy'
+				decoding='async'
+				width='412'
+				height='344'
+			/>
+		</div>
+		<div class='card-content'>
+			<h2>{title.toUpperCase()}</h2>
+			<div class='technologies'>
+				{
+					technologies.front.length > 0 && (
+						<div>
+							<p>Frontend</p>
+							<div class='chips'>
+								{technologies.front.map((chip: string) => (
+									<Chip
+										avatar={true}
+										src={technologiesImg.find((tech: any) => tech.name === chip)?.img}
+										alt_img={technologiesImg.find((tech: any) => tech.name === chip)?.alt_img}
+									>
+										{chip}
+									</Chip>
+								))}
+							</div>
+						</div>
+					)
+				}
+				{
+					technologies.back.length > 0 && (
+						<div>
+							<p>Backend</p>
+							<div class='chips'>
+								{technologies.back.map((chip: string) => (
+									<Chip
+										avatar={true}
+										src={technologiesImg.find((tech: any) => tech.name === chip)?.img}
+										alt_img={technologiesImg.find((tech: any) => tech.name === chip)?.alt_img}
+									>
+										{chip}
+									</Chip>
+								))}
+							</div>
+						</div>
+					)
+				}
+				{
+					technologies.database.length > 0 && (
+						<div>
+							<p>Database</p>
+							<div class='chips'>
+								{technologies.database.map((chip: string) => (
+									<Chip
+										avatar={true}
+										src={technologiesImg.find((tech: any) => tech.name === chip)?.img}
+										alt_img={technologiesImg.find((tech: any) => tech.name === chip)?.alt_img}
+									>
+										{chip}
+									</Chip>
+								))}
+							</div>
+						</div>
+					)
+				}
+				{
+					technologies.testing.length > 0 && (
+						<div>
+							<p>Testing</p>
+							<div class='chips'>
+								{technologies.testing.map((chip: string) => (
+									<Chip
+										avatar={true}
+										src={technologiesImg.find((tech: any) => tech.name === chip)?.img}
+										alt_img={technologiesImg.find((tech: any) => tech.name === chip)?.alt_img}
+									>
+										{chip}
+									</Chip>
+								))}
+							</div>
+						</div>
+					)
+				}
+			</div>
+			<p class='description'>{description}</p>
+		</div>
+	</div>
+	<ul class='buttons'>
+		{
+			links.map((link: Links, index: number) => (
+				<li>
+					<a class={index === 0 ? 'primary-button' : 'secondary-button'} href={link.url} target='_blank'>
+						<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' text-anchor='middle'>
+							<g transform='translate(3, 2)'>
+								<path
+									fill-rule='evenodd'
+									d={
+										link.icon === 'Globe'
+											? 'M12.835 17.6168C14.8814 16.8547 16.5379 15.2916 17.423 13.3086C16.399 13.4926 15.2672 13.6389 14.0586 13.7406C13.792 15.2506 13.3687 16.5776 12.835 17.6168ZM10 20C15.5229 20 20 15.5229 20 10C20 4.47715 15.5229 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5229 4.47715 20 10 20ZM10.6043 18.1029C10.4048 18.1175 10.2033 18.125 10 18.125C9.79673 18.125 9.5952 18.1175 9.39568 18.1029C9.3915 18.0989 9.3873 18.0949 9.38309 18.0907C9.05188 17.7706 8.68223 17.2317 8.3379 16.4447C8.01993 15.718 7.74974 14.8392 7.55126 13.8472C8.34506 13.886 9.1638 13.9062 10 13.9062C10.8362 13.9062 11.6549 13.886 12.4487 13.8472C12.2503 14.8392 11.9801 15.718 11.6621 16.4447C11.3178 17.2317 10.9481 17.7706 10.6169 18.0907C10.6127 18.0949 10.6085 18.0989 10.6043 18.1029ZM14.2734 12.1531C15.6421 12.0262 16.8895 11.8406 17.9655 11.6101C18.0701 11.0897 18.125 10.5512 18.125 10C18.125 9.44876 18.0701 8.91035 17.9655 8.38992C16.8895 8.15944 15.6421 7.9738 14.2734 7.84691C14.3399 8.5404 14.375 9.26084 14.375 10C14.375 10.7392 14.3399 11.4596 14.2734 12.1531ZM12.6906 7.73001C12.7696 8.44978 12.8125 9.21006 12.8125 10C12.8125 10.7899 12.7696 11.5502 12.6906 12.27C11.8265 12.3182 10.9261 12.3438 10 12.3438C9.07386 12.3438 8.17346 12.3182 7.30936 12.27C7.23037 11.5502 7.1875 10.7899 7.1875 10C7.1875 9.21006 7.23037 8.44978 7.30936 7.73001C8.17346 7.68181 9.07386 7.65625 10 7.65625C10.9261 7.65625 11.8265 7.68181 12.6906 7.73001ZM14.0586 6.25935C15.2672 6.36114 16.3989 6.50741 17.423 6.69132C16.5379 4.70837 14.8814 3.14528 12.835 2.38328C13.3687 3.42235 13.792 4.74941 14.0586 6.25935ZM10.6043 1.89714C10.6085 1.90111 10.6127 1.90514 10.6169 1.90921C10.9481 2.22941 11.3178 2.7682 11.6621 3.55521C11.9801 4.28203 12.2503 5.1607 12.4487 6.15274C11.6549 6.11398 10.8362 6.09375 10 6.09375C9.1638 6.09375 8.34506 6.11398 7.55126 6.15274C7.74972 5.1607 8.01993 4.28203 8.3379 3.55521C8.68223 2.7682 9.05188 2.22941 9.38309 1.90921C9.3873 1.90514 9.39149 1.90111 9.39566 1.89714C9.59519 1.88246 9.79673 1.875 10 1.875C10.2033 1.875 10.4048 1.88246 10.6043 1.89714ZM7.16502 2.38329C5.11862 3.14528 3.46219 4.70837 2.57699 6.69132C3.60106 6.50741 4.73271 6.36114 5.94136 6.25935C6.20799 4.74941 6.63121 3.42235 7.16502 2.38329ZM5.72666 7.84691C4.35791 7.9738 3.11046 8.15944 2.03451 8.38992C1.9299 8.91035 1.875 9.44876 1.875 10C1.875 10.5512 1.9299 11.0897 2.03451 11.6101C3.11046 11.8406 4.35791 12.0262 5.72666 12.1531C5.66009 11.4596 5.625 10.7392 5.625 10C5.625 9.26084 5.66009 8.5404 5.72666 7.84691ZM5.94136 13.7406C4.73271 13.6389 3.60106 13.4926 2.57699 13.3086C3.46219 15.2916 5.11862 16.8547 7.16502 17.6168C6.63121 16.5776 6.20799 15.2506 5.94136 13.7406Z'
+											: 'M10 0C4.475 0 0 4.5882 0 10.2529C0 14.7899 2.8625 18.6219 6.8375 19.9804C7.3375 20.0701 7.525 19.7626 7.525 19.4935C7.525 19.2499 7.5125 18.4425 7.5125 17.5839C5 18.058 4.35 16.9558 4.15 16.3791C4.0375 16.0844 3.55 15.1744 3.125 14.9309C2.775 14.7386 2.275 14.2644 3.1125 14.2516C3.9 14.2387 4.4625 14.9949 4.65 15.3026C5.55 16.8532 6.9875 16.4176 7.5625 16.1483C7.65 15.4819 7.9125 15.0333 8.2 14.7771C5.975 14.5208 3.65 13.6364 3.65 9.71466C3.65 8.59966 4.0375 7.67689 4.675 6.95919C4.575 6.70287 4.225 5.65194 4.775 4.24216C4.775 4.24216 5.6125 3.97302 7.525 5.29308C8.325 5.06239 9.175 4.94704 10.025 4.94704C10.875 4.94704 11.725 5.06239 12.525 5.29308C14.4375 3.9602 15.275 4.24216 15.275 4.24216C15.825 5.65194 15.475 6.70287 15.375 6.95919C16.0125 7.67689 16.4 8.58684 16.4 9.71466C16.4 13.6492 14.0625 14.5208 11.8375 14.7771C12.2 15.0974 12.5125 15.7126 12.5125 16.6739C12.5125 18.0451 12.5 19.1473 12.5 19.4935C12.5 19.7626 12.6875 20.083 13.1875 19.9804C15.1726 19.2933 16.8978 17.9851 18.1198 16.2401C19.3419 14.4951 19.9995 12.4012 20 10.2529C20 4.5882 15.525 0 10 0Z'
+									}
+									fill={index === 0 ? '#0a0a0a' : '#f6fa2a'}
+								/>
+							</g>
+						</svg>
+						{link.name}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</div>
+
+<style>
+	.repo-card {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background-color: var(--neutral-800);
+		padding: 1rem;
+		border-radius: 0.5rem;
+		height: 100%;
+	}
+	.card-content {
+		height: 100%;
+	}
+	h2 {
+		display: flex;
+		gap: 0.5rem;
+		font-family: 'TexasLED';
+		font-weight: 400;
+		color: var(--primary-400);
+		& img {
+			width: var(--title-small);
+			height: var(--title-small);
+			margin-top: 0.5rem;
+		}
+	}
+	.card-image[Attributes Style] {
+		aspect-ratio: auto 103/86;
+	}
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	h2 {
+		padding-bottom: 1rem;
+	}
+	.technologies p {
+		font-size: var(--body-small);
+		color: var(--neutral-300);
+	}
+	.buttons svg {
+		margin-right: 0.5rem;
+	}
+	.buttons > :not(:last-child) {
+		margin-bottom: 1rem;
+	}
+	.description {
+		padding-bottom: 1rem;
+	}
+	.technologies > div {
+		margin-bottom: 1rem;
+		& p {
+			margin-bottom: 0.5rem;
+		}
+	}
+	a {
+		width: 100%;
+	}
+	.card-image {
+		object-fit: cover;
+		margin-bottom: 2rem;
+		height: 344px;
+		width: 100%;
+		display: none;
+	}
+	.gif-image {
+		object-fit: cover;
+		margin-bottom: 2rem;
+		height: 344px;
+		width: 100%;
+		display: block;
+	}
+
+	@media (width >= 1024px) {
+		.images:hover .card-image {
+			display: none;
+		}
+		.images:hover .gif-image {
+			display: block;
+		}
+		.card-image {
+			display: block;
+		}
+		.gif-image {
+			display: none;
+		}
+	}
+</style>

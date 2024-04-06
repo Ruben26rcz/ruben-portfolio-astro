@@ -163,7 +163,7 @@ const { title, description } = Astro.props
 				background-color: var(--primary-400);
 				color: var(--neutral-950);
 				border: 1px solid var(--primary-400);
-				border-radius: 1rem;
+				border-radius: 0.5rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -175,18 +175,21 @@ const { title, description } = Astro.props
 			}
 			.secondary-button {
 				background-color: unset;
-				color: var(--neutral-00);
+				color: var(--primary-400);
 				border: 1px solid var(--primary-400);
-				border-radius: 1rem;
-				display: inline-flex;
+				border-radius: 0.5rem;
+				display: flex;
 				align-items: center;
 				justify-content: center;
 				min-height: 48px;
-				padding-inline: 2rem;
-				width: 100%;
+				padding-inline: 3rem;
+				& svg {
+					margin-right: 1rem;
+					fill: var(--primary-400);
+				}
 				&:hover {
 					background-color: var(--neutral-600);
-					color: var(--neutral-00);
+					color: var(--primary-500);
 				}
 			}
 			@media (width >= 1024px) {
