@@ -5,7 +5,7 @@
     "description": "A responsive marketplace of gaming products for demanding gamers with their setup. UI designed by me 🙌",
     "cover": "img/computech-cover.jpg",
     "cover_alt": "Screenshot of computech",
-    "GIFCover": "img/computech-GIF.gif",
+    "GIFCover": "img/computech-animated.gif",
     "GIFCover_alt": "GIF of computech",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
@@ -33,7 +33,7 @@
     "description": "A webapp for managing orders via telegram",
     "cover": "img/menubot-cover.jpg",
     "cover_alt": "Screenshot of MenuBot",
-    "GIFCover": "img/menubot-gif.gif",
+    "GIFCover": "img/menubot-animated.gif",
     "GIFCover_alt": "GIF of MenuBot",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
@@ -56,7 +56,7 @@
     "description": "Another todo list webapp for manage daily tasks",
     "cover": "img/todo-cover.png",
     "cover_alt": "Screenshot of To Do app",
-    "GIFCover": "img/to-do-GIF.gif",
+    "GIFCover": "img/to-do-animated.gif",
     "GIFCover_alt": "GIF of the to do app",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
@@ -84,7 +84,7 @@
     "description": "Both React and Vanilla JS",
     "cover": "img/calculator-cover.png",
     "cover_alt": "screenshot of the calculator",
-    "GIFCover": "img/calculator-GIF.gif",
+    "GIFCover": "img/calculator-animated.gif",
     "GIFCover_alt": "GIF of the calculator working",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
