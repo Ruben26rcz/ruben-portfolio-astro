@@ -222,14 +222,13 @@ const { title, description, cover, cover_alt, GIFCover, GIFCover_alt, technologi
 		margin-bottom: 2rem;
 		height: 344px;
 		width: 100%;
-		display: none;
 	}
 	.gif-image {
 		object-fit: cover;
 		margin-bottom: 2rem;
 		height: 344px;
 		width: 100%;
-		display: block;
+		display: none;
 	}
 
 	@media (width >= 1024px) {
@@ -238,12 +237,6 @@ const { title, description, cover, cover_alt, GIFCover, GIFCover_alt, technologi
 		}
 		.images:hover .gif-image {
 			display: block;
-		}
-		.card-image {
-			display: block;
-		}
-		.gif-image {
-			display: none;
 		}
 	}
 </style>
