@@ -3,10 +3,8 @@
     "id": 0,
     "title": "Computech",
     "description": "A responsive marketplace of gaming products for demanding gamers with their setup. UI designed by me 🙌",
-    "cover": "img/computech-cover.jpg",
+    "cover": "img/computech-cover.png",
     "cover_alt": "Screenshot of computech",
-    "GIFCover": "img/computech-animated.gif",
-    "GIFCover_alt": "GIF of computech",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
       "front": ["React", "JavaScript", "Ant Design", "Stripe", "Cloudinary"],
@@ -31,10 +29,8 @@
     "id": 1,
     "title": "MenuBot",
     "description": "A webapp for managing orders via telegram",
-    "cover": "img/menubot-cover.jpg",
+    "cover": "img/menubot-cover.png",
     "cover_alt": "Screenshot of MenuBot",
-    "GIFCover": "img/menubot-animated.gif",
-    "GIFCover_alt": "GIF of MenuBot",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
       "front": ["React", "TypeScript", "Ant Design"],
@@ -56,8 +52,6 @@
     "description": "Another todo list webapp for manage daily tasks",
     "cover": "img/todo-cover.png",
     "cover_alt": "Screenshot of To Do app",
-    "GIFCover": "img/to-do-animated.gif",
-    "GIFCover_alt": "GIF of the to do app",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
       "front": ["React"],
@@ -84,8 +78,6 @@
     "description": "Both React and Vanilla JS",
     "cover": "img/calculator-cover.png",
     "cover_alt": "screenshot of the calculator",
-    "GIFCover": "img/calculator-animated.gif",
-    "GIFCover_alt": "GIF of the calculator working",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
       "front": ["React", "Vanilla JavaScript"],

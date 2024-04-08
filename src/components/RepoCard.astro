@@ -21,8 +21,6 @@ interface Repo {
 	description: string
 	cover: string
 	cover_alt: string
-	GIFCover: string
-	GIFCover_alt: string
 	publishDate: string
 	technologies: Technology
 	links: Links[]
@@ -33,26 +31,15 @@ const { title, description, cover, cover_alt, GIFCover, GIFCover_alt, technologi
 
 <div class='repo-card'>
 	<div>
-		<div class='images'>
-			<img
-				class='card-image'
-				src={cover}
-				alt={cover_alt || ''}
-				loading='lazy'
-				decoding='async'
-				width='412'
-				height='344'
-			/>
-			<img
-				class='gif-image'
-				src={GIFCover}
-				alt={GIFCover_alt || ''}
-				loading='lazy'
-				decoding='async'
-				width='412'
-				height='344'
-			/>
-		</div>
+		<img
+			class='card-image'
+			src={cover}
+			alt={cover_alt || ''}
+			loading='lazy'
+			decoding='async'
+			width='412'
+			height='344'
+		/>
 		<div class='card-content'>
 			<h2>{title.toUpperCase()}</h2>
 			<div class='technologies'>
@@ -183,9 +170,6 @@ const { title, description, cover, cover_alt, GIFCover, GIFCover_alt, technologi
 			margin-top: 0.5rem;
 		}
 	}
-	.card-image[Attributes Style] {
-		aspect-ratio: auto 103/86;
-	}
 	.chips {
 		display: flex;
 		flex-wrap: wrap;
@@ -223,20 +207,7 @@ const { title, description, cover, cover_alt, GIFCover, GIFCover_alt, technologi
 		height: 344px;
 		width: 100%;
 	}
-	.gif-image {
-		object-fit: cover;
-		margin-bottom: 2rem;
-		height: 344px;
-		width: 100%;
-		display: none;
-	}
-
-	@media (width >= 1024px) {
-		.images:hover .card-image {
-			display: none;
-		}
-		.images:hover .gif-image {
-			display: block;
-		}
+	.card-image[Attributes Style] {
+		aspect-ratio: auto 103/86;
 	}
 </style>
