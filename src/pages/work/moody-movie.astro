@@ -5,15 +5,12 @@ const work = works.find((work) => work.title === 'Moody Movie')
 import { Image } from 'astro:assets'
 import imgWireframe from 'src/assets/img/moody-movie-wireframe-large.webp'
 import imgDesignSystem from 'src/assets/img/moody-movie-design-system-large.jpg'
+import ProjectHero from '@/sections/ProjectHero.astro'
 ---
 
 <Layout title={`Ruben UX/UI - ${work?.slug}`} description={work?.description}>
 	<main class='wrapper'>
-		<section class='hero-project'>
-			<h1>{work?.title.toUpperCase()}</h1>
-			<h2>{work?.description}</h2>
-			<img class='cover-img' src='/img/moody-movie-cover.webp' alt={work?.cover_alt} />
-		</section>
+		<ProjectHero work={work} />
 		<section class='content'>
 			<div>
 				<h3>✍️ The challenge: Design an App</h3>
@@ -66,10 +63,6 @@ import imgDesignSystem from 'src/assets/img/moody-movie-design-system-large.jpg'
 	</main>
 
 	<style>
-		main {
-			min-height: 100dvh;
-			padding-block: 3rem;
-		}
 		.cover-img {
 			width: 100%;
 			object-fit: cover;

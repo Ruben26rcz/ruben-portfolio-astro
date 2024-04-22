@@ -6,11 +6,12 @@
     "description": "The app for dog and cat owners who want to contribute to the health of their pets",
     "cover": "/img/datapet-cover.png",
     "cover_alt": "three iphones show datapet app screenshots",
+    "appIcon": "/svg/datapet-icon.svg",
     "publishDate": "2022-05-15T18:21:59.511Z",
     "duration": "Dec 2023 - Feb 2024",
     "chips": ["Research", "Web Design"],
     "tools": ["Figma", "Miro"],
-    "type": "Master's Degree",
+    "type": "Master's Degree Project",
     "display": true
   },
   {
@@ -20,11 +21,12 @@
     "description": "An app that suggest movies based on your mood",
     "cover": "/img/moody-movie-cover.webp",
     "cover_alt": "Multiple screens displaying the app",
+    "appIcon": "/svg/moody-movie-icon.svg",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "duration": "Dec 2023 - Feb 2024",
     "chips": ["App Design"],
     "tools": ["Figma", "Figjam"],
-    "type": "Personal"
+    "type": "Master's Degree Exercise"
   },
   {
     "id": 2,
@@ -33,11 +35,12 @@
     "description": "A landing page for a space travel agency",
     "cover": "/img/travel-beyond-cover.webp",
     "cover_alt": "Travel Beyond displayed in an IMac screen",
+    "appIcon": "/svg/travel-beyond-icon.svg",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "duration": "Dec 2023 - Feb 2024",
     "chips": ["Web Design"],
     "tools": ["Figma"],
-    "type": "Personal",
+    "type": "Master's Degree Exercise",
     "display": true
   },
   {
@@ -47,6 +50,7 @@
     "description": "A web for a travel agency that offers adventure trips",
     "cover": "/img/aventuralia-cover.webp",
     "cover_alt": "A person holding a phone",
+    "appIcon": "/svg/aventuralia-icon.svg",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "duration": "Dec 2023 - Feb 2024",
     "chips": ["Research", "Web Design"],

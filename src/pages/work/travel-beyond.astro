@@ -4,15 +4,12 @@ import works from 'src/data/works.json'
 const work = works.find((work) => work.title === 'Travel Beyond')
 import { Image } from 'astro:assets'
 import imgDesignSystem from 'src/assets/img/mini-design-system-large.webp'
+import ProjectHero from '@/sections/ProjectHero.astro'
 ---
 
 <Layout title={`Ruben UX/UI - ${work?.title}`} description={work?.description}>
 	<main class='wrapper'>
-		<section class='hero-project'>
-			<h1>{work?.title.toUpperCase()}</h1>
-			<h2>{work?.description}</h2>
-			<img class='cover-img' src='/img/travel-beyond-cover.webp' alt={work?.cover_alt} />
-		</section>
+		<ProjectHero work={work} />
 		<section class='content'>
 			<div>
 				<h3>✍️ From content to design</h3>
@@ -72,10 +69,6 @@ import imgDesignSystem from 'src/assets/img/mini-design-system-large.webp'
 	</main>
 
 	<style>
-		main {
-			min-height: 100dvh;
-			padding-block: 3rem;
-		}
 		.cover-img {
 			width: 100%;
 			object-fit: cover;

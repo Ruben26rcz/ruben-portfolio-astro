@@ -2,15 +2,12 @@
 import Layout from '../../layouts/Layout.astro'
 import works from '../../data/works.json'
 const work = works.find((work) => work.title === 'Aventuralia')
+import ProjectHero from '@/sections/ProjectHero.astro'
 ---
 
 <Layout title={`Ruben UX/UI - ${work?.slug}`} description={work?.description}>
 	<main class='wrapper'>
-		<section class='hero-project'>
-			<h1>{work?.title.toUpperCase()}</h1>
-			<h2>{work?.description}</h2>
-			<img src='/img/aventuralia-cover.webp' alt={work?.cover_alt} />
-		</section>
+		<ProjectHero work={work} />
 		<section class='content'>
 			<a
 				class='primary-button'
@@ -21,10 +18,6 @@ const work = works.find((work) => work.title === 'Aventuralia')
 	</main>
 
 	<style>
-		main {
-			min-height: 100dvh;
-			padding-block: 3rem;
-		}
 		img {
 			width: 100%;
 			object-fit: cover;

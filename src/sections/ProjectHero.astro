@@ -1,0 +1,82 @@
+---
+const work = Astro.props.work
+import Chip from '@/components/Chip.astro'
+const formatTools = (tools: string[]) => {
+	if (!tools || tools.length === 0) return ''
+	if (tools.length === 1) return tools[0]
+	if (tools.length === 2) return tools.join(' and ')
+
+	const lastTool = tools.pop()
+	return tools.join(', ') + ', and ' + lastTool
+}
+---
+
+<section>
+	<div class='title'>
+		<img class='icon' src={work && work.appIcon} alt={`${work.title} app icon`} />
+		<h1>{work && work.title}</h1>
+	</div>
+	<h2>{work && work.description}</h2>
+	<div>
+		{work && work.chips.map((chip: string) => <Chip avatar={false}>{chip}</Chip>)}
+	</div>
+	<img class='cover' src={work && work.cover} alt={work && work.cover_alt} />
+	<ul>
+		<li>
+			<p>📆 Duration</p>
+			<p>{work && work.duration}</p>
+		</li>
+		<li>
+			<p>⚙️ Tools</p>
+			<p>{work && work.tools}</p>
+		</li>
+		<li>
+			<p>🗂️ Type of Project</p>
+			<p>{work && work.type}</p>
+		</li>
+	</ul>
+</section>
+
+<style>
+	section {
+		padding-top: 2.5rem;
+		padding-bottom: 5rem;
+	}
+	.title {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	.icon {
+		height: clamp(2.5rem, 8vw, 3.5rem);
+		aspect-ratio: 1/1;
+	}
+	h1 {
+		font-family: 'TexasLED';
+		color: var(--primary-400);
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+	h2 {
+		margin-block: 1rem;
+		font-weight: 500;
+		font-size: var(--body-large);
+	}
+	.cover {
+		width: 100%;
+		margin-block: 1.5rem;
+	}
+	ul {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	li p:first-child {
+		color: var(--neutral-300);
+	}
+	@media (width >= 768px) {
+		ul {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>

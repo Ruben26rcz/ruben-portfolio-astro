@@ -19,15 +19,12 @@ import architecture from '@/assets/img/datapet-info-arch.png'
 import cardSorting from '@/assets/img/datapet-card-sorting.png'
 import wireframes from '@/assets/img/datapet-wireframes.png'
 import designSystem from '@/assets/img/datapet-design-system.png'
+import ProjectHero from '@/sections/ProjectHero.astro'
 ---
 
 <Layout title={`Ruben UX/UI - ${work?.slug}`} description={work?.description}>
 	<main class='wrapper'>
-		<section class='hero-project'>
-			<h1>{work?.title.toUpperCase()}</h1>
-			<h2>{work?.description}</h2>
-			<img src={work?.cover} alt={work?.cover_alt} />
-		</section>
+		<ProjectHero work={work} />
 		<div class='content'>
 			<section>
 				<h3>Context</h3>
@@ -235,23 +232,9 @@ import designSystem from '@/assets/img/datapet-design-system.png'
 	</main>
 
 	<style>
-		main {
-			min-height: 100dvh;
-			padding-block: 3rem;
-		}
 		img {
 			width: 100%;
 			object-fit: cover;
-		}
-		h1 {
-			font-family: 'TexasLED';
-			color: var(--primary-400);
-			font-weight: 400;
-		}
-		h2 {
-			margin-block: 1rem;
-			font-weight: 500;
-			font-size: var(--body-large);
 		}
 		h3 {
 			font-family: 'TexasLED';
