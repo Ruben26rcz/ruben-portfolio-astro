@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro'
 import works from '../../data/works.json'
 const work = works.find((work) => work.title === 'DataPet')
+import Carousel from '@/components/Carousel.astro'
 import { Image } from 'astro:assets'
 import doubleDiamond from '@/assets/img/datapet-design-thinking.png'
 import nowadays from '@/assets/img/datapet-context.png'
@@ -162,7 +163,7 @@ import designSystem from '@/assets/img/datapet-design-system.png'
 						For the design concept we want to reflect DataPet's personality and values. We portray ourselves as
 						<em>familiar</em>, <em>approachable</em>, and <em>professional</em>.
 					</p>
-					<Image src={agile} alt='' />
+					<Carousel />
 				</div>
 				<div>
 					<h4>Landing</h4>
@@ -205,12 +206,12 @@ import designSystem from '@/assets/img/datapet-design-system.png'
 				<h3>Result</h3>
 				<div>
 					<h4>Prototype</h4>
-					<iframe
+					<!-- <iframe
 						style='border: none'
 						width='100%'
 						height='656'
 						src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FxbRXFemoG1GASQHH4b6YDz%2FDataPet-%25E2%2580%2594-TFM--Personal%3Fpage-id%3D1327%253A38400%26type%3Ddesign%26node-id%3D1366-46370%26viewport%3D123%252C935%252C0.02%26t%3DLTR9y8IrO7pi36Hs-1%26scaling%3Dcontain%26starting-point-node-id%3D1366%253A47379%3D1%26mode%3Ddesign%26hide-ui%3D1'
-						allowfullscreen></iframe>
+						allowfullscreen></iframe> -->
 				</div>
 				<div>
 					<h4>Next Steps</h4>
