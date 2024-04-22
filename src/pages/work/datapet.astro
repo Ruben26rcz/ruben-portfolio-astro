@@ -206,12 +206,18 @@ import designSystem from '@/assets/img/datapet-design-system.png'
 				<h3>Result</h3>
 				<div>
 					<h4>Prototype</h4>
-					<!-- <iframe
+					<iframe
+						class='figma-proto'
 						style='border: none'
 						width='100%'
 						height='656'
 						src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FxbRXFemoG1GASQHH4b6YDz%2FDataPet-%25E2%2580%2594-TFM--Personal%3Fpage-id%3D1327%253A38400%26type%3Ddesign%26node-id%3D1366-46370%26viewport%3D123%252C935%252C0.02%26t%3DLTR9y8IrO7pi36Hs-1%26scaling%3Dcontain%26starting-point-node-id%3D1366%253A47379%3D1%26mode%3Ddesign%26hide-ui%3D1'
-						allowfullscreen></iframe> -->
+						allowfullscreen></iframe>
+					<a
+						class='proto-link primary-button'
+						href='https://www.figma.com/proto/xbRXFemoG1GASQHH4b6YDz/DataPet-%E2%80%94-TFM--Personal?page-id=1327%3A38400&type=design&node-id=1366-46370&viewport=171%2C1080%2C0.03&t=YySKm29PDAMhtmJl-1&scaling=scale-down&starting-point-node-id=1366%3A47379&mode=design'
+						target='_blank'>Play the prototype 📱</a
+					>
 				</div>
 				<div>
 					<h4>Next Steps</h4>
@@ -276,7 +282,6 @@ import designSystem from '@/assets/img/datapet-design-system.png'
 			}
 			& img {
 				height: auto;
-				/* max-width: 750px; */
 				margin-inline: auto;
 				margin-bottom: 1px;
 			}
@@ -289,9 +294,19 @@ import designSystem from '@/assets/img/datapet-design-system.png'
 				}
 			}
 		}
-
 		.content section > div {
 			padding-bottom: 2rem;
+		}
+		.figma-proto {
+			display: none;
+		}
+		@media (width >= 1024px) {
+			.figma-proto {
+				display: block;
+			}
+			.proto-link {
+				display: none;
+			}
 		}
 	</style>
 </Layout>
