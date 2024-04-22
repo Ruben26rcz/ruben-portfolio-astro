@@ -6,6 +6,7 @@ export default defineConfig({
 	output: 'server',
 	adapter: vercel({
 		webAnalytics: { enabled: true },
+		imageService: true,
 	}),
 	integrations: [pageInsight()],
 })

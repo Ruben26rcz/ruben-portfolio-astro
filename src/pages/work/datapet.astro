@@ -1,0 +1,296 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import works from '../../data/works.json'
+const work = works.find((work) => work.title === 'DataPet')
+import { Image } from 'astro:assets'
+import doubleDiamond from '@/assets/img/datapet-design-thinking.png'
+import nowadays from '@/assets/img/datapet-context.png'
+import archetype from '@/assets/img/datapet-archetype.png'
+import vetInsights from '@/assets/img/datapet-surveys-1.png'
+import ownerInsights from '@/assets/img/datapet-surveys-2.png'
+import benchmark from '@/assets/img/datapet-benchmark.png'
+import businessModel from '@/assets/img/datapet-business-model.png'
+import focusGroup from '@/assets/img/datapet-focus-group.png'
+import mvp from '@/assets/img/datapet-mvp.png'
+import agile from '@/assets/img/datapet-agile.png'
+import landing from '@/assets/img/datapet-landing.png'
+import architecture from '@/assets/img/datapet-info-arch.png'
+import cardSorting from '@/assets/img/datapet-card-sorting.png'
+import wireframes from '@/assets/img/datapet-wireframes.png'
+import designSystem from '@/assets/img/datapet-design-system.png'
+---
+
+<Layout title={`Ruben UX/UI - ${work?.slug}`} description={work?.description}>
+	<main class='wrapper'>
+		<section class='hero-project'>
+			<h1>{work?.title.toUpperCase()}</h1>
+			<h2>{work?.description}</h2>
+			<img src={work?.cover} alt={work?.cover_alt} />
+		</section>
+		<div class='content'>
+			<section>
+				<h3>Context</h3>
+				<div>
+					<h4>Design Thinking</h4>
+					<p>
+						We use design thinking to deeply understand user needs, generate innovative solutions, and iterate quickly
+						to create meaningful and <em>user-centered experiences</em>. This approach promotes creativity, empathy, and
+						collaboration, eventually leading to the development of impactful solutions that address <em
+							>real user challenges</em
+						>.
+					</p>
+					<Image src={doubleDiamond} alt='Double diamond diagram' />
+				</div>
+				<div>
+					<h4>Nowadays</h4>
+					<p>
+						We find ourselves in a situation where, due to the <em>pandemic</em>, the <em>number of pets</em> in households
+						has <em>increased</em>
+						(44% for dogs, 35% for cats*). This has opened up a range of opportunities in the pet sector, allowing us to
+						explore and propose solutions to the needs faced by these pet owners.
+					</p>
+					<Image src={nowadays} alt='Chart of number of pets in Spain from 2017 to 2020' />
+					<small>*Data from ANFAAC 2020 (Spanish Association of Manufacturers of Pet Food).</small>
+				</div>
+			</section>
+			<section>
+				<h3>Research</h3>
+				<div>
+					<h4>Discovery</h4>
+					<p>
+						The aim was to gather vital information about <em>dog and cat owners</em>, enabling the identification of
+						their needs, behaviours, and frustrations. This effort was geared towards understanding them, discerning
+						patterns in their behaviour, and identifying opportunities for improvement.
+					</p>
+				</div>
+				<div>
+					<h4>Archetype</h4>
+					<p>
+						We did some outreach interviews to identify potential DataPet users and to empathise with them, avoiding
+						biases from our perspective. Therefore, We identified the archetype for DataPet <em>"the caregiver"</em> , individuals
+						committed to their pet's health and dedicated to positively transforming it. Additionally, we recognised the
+						importance of including health professionals, particularly <em>veterinarians</em>, although they are not the
+						primary users of the platform.
+					</p>
+					<Image src={archetype} alt='Empathy map of the archetype the caregiver' />
+				</div>
+				<div>
+					<h4>Surveys and Interviews</h4>
+					<div>
+						We collected responses from caregivers through <em>81 surveys</em> and <em>15 interviews</em>, and from
+						veterinarians through
+						<em>7 interviews</em>. These insights emerged from the data: <br />
+						From caregivers:
+						<ul>
+							<li><em>97%</em> want to manage their <em>pet's health digitally</em>.</li>
+							<li><em>75% forgets</em> or are uncertain about the <em>treatments</em> to administer.</li>
+							<li>45% don't keep their pets' habits up to date.</li>
+						</ul>
+						From veterinarians:
+						<ul>
+							<li>
+								<em>87%</em> assert that if owners had an <em>app to manage health</em>, they would save additional
+								work.
+							</li>
+							<li>35% Say that owners forget to bring the veterinary record to the appointment.</li>
+						</ul>
+					</div>
+					<Image src={vetInsights} alt='List of percentages for the insights gathered from caregivers' />
+					<Image src={ownerInsights} alt='List of percentages for the insights gathered from veterinarians' />
+				</div>
+			</section>
+			<section>
+				<h3>Business</h3>
+				<div>
+					<h4>Benchmark</h4>
+					<p>
+						Through a market study, we were able to identify where existing applications stood and determine where we
+						wanted to position ourselves against the competition. We aimed to offer an app with a <em
+							>better UX/UI and offer more features</em
+						>. Because most of them weren’t intuitive and had few features to solve specific user needs.
+					</p>
+					<Image src={benchmark} alt='Matrix of main competitors of DataPet' />
+				</div>
+				<div>
+					<h4>Business Model Canvas</h4>
+					<p>
+						A business model canvas provides a concise overview of our business strategy, including our value
+						proposition, target market, revenue streams, and key partnerships. It helps us communicate our model
+						clearly, identify opportunities for improvement, and align our team around common goals. We identified as
+						<em>key partners</em> the <em>veterinary database</em> software. As <em>revenue streams</em> to ensure the sustainability
+						of the app, DataPet would offer a free plan with basic features and a <em>monthly or annual subscription</em
+						>, providing additional valuable functionalities for users.
+					</p>
+					<Image src={businessModel} alt='Business model canvas of DataPet' />
+				</div>
+			</section>
+			<section>
+				<h3>App Design</h3>
+				<div>
+					<h4>Focus Group</h4>
+					<p>
+						Focus groups allowed us to gather valuable insights from our users, ensuring that our app suits their needs.
+					</p>
+					<Image src={focusGroup} alt='' />
+				</div>
+				<div>
+					<h4>MVP</h4>
+					<div>
+						<p>With the feedback obtained from users we decided to add <em>6 features</em> for the first version:</p>
+						<ul>
+							<li>Agenda</li>
+							<li>Digital Veterinary Card</li>
+							<li>Medical History</li>
+							<li>Weight management</li>
+							<li>Veterinary 24h</li>
+							<li>Calendar synchronisation</li>
+						</ul>
+					</div>
+					<Image src={mvp} alt='' />
+				</div>
+				<div>
+					<h4>Agile</h4>
+					<p>
+						We'll apply agile over <em>2 sprints of 3 weeks</em>, adding value at every stage with an iterative,
+						adaptive approach.
+					</p>
+					<Image src={agile} alt='' />
+				</div>
+				<div>
+					<h4>Design Concept</h4>
+					<p>
+						For the design concept we want to reflect DataPet's personality and values. We portray ourselves as
+						<em>familiar</em>, <em>approachable</em>, and <em>professional</em>.
+					</p>
+					<Image src={agile} alt='' />
+				</div>
+				<div>
+					<h4>Landing</h4>
+					<p>
+						To introduce ourselves, we'd launch a Landing Page where we outline the benefits of DataPet. Finally, we
+						provide an information box on the status and evolution of DataPet, inviting users or interested individuals
+						to collaborate altruistically by <em>sending us an email</em>. Additionally, to generate interest, we have a
+						<em>blog</em> with news, curiosities, and tips about pets.
+					</p>
+					<Image src={landing} alt='DataPet landing page' />
+				</div>
+				<div>
+					<h4>Information Architecture & Card Sorting</h4>
+					<p>
+						We structured the information architecture to ensure intuitive navigation and organisation of our platform's
+						content. Then we tested it with users by doing a card sorting session.
+					</p>
+					<Image src={architecture} alt='' />
+					<Image src={cardSorting} alt='' />
+				</div>
+				<div>
+					<h4>Wireframes</h4>
+					<p>
+						We organised the content within wireframes. These allowed us to conduct initial user tests and receive
+						usability feedback. We iterated until reaching the desired result.
+					</p>
+					<Image src={wireframes} alt='' />
+				</div>
+				<div>
+					<h4>Design System</h4>
+					<p>
+						We develop a design system to establish <em>consistency</em> and coherence across our platform. This system helps
+						us to focus on design decisions instead of UI components, also facilitates <em>collaboration</em> among team
+						members, and enhances <em>brand recognition</em> and trust among users.
+					</p>
+					<Image src={designSystem} alt='' />
+				</div>
+			</section>
+			<section>
+				<h3>Result</h3>
+				<div>
+					<h4>Prototype</h4>
+					<iframe
+						style='border: none'
+						width='100%'
+						height='656'
+						src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FxbRXFemoG1GASQHH4b6YDz%2FDataPet-%25E2%2580%2594-TFM--Personal%3Fpage-id%3D1327%253A38400%26type%3Ddesign%26node-id%3D1366-46370%26viewport%3D123%252C935%252C0.02%26t%3DLTR9y8IrO7pi36Hs-1%26scaling%3Dcontain%26starting-point-node-id%3D1366%253A47379%3D1%26mode%3Ddesign%26hide-ui%3D1'
+						allowfullscreen></iframe>
+				</div>
+				<div>
+					<h4>Next Steps</h4>
+					<ul>
+						<li>Continue testing and validating design hypotheses.</li>
+						<li>
+							Refine the prototyping and design to make it visually appealing and inviting to use, aiming to attract
+							fans rather than just users.
+						</li>
+						<li>Explore further into inbound marketing, finding partners and seeking funding opportunities.</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<style>
+		main {
+			min-height: 100dvh;
+			padding-block: 3rem;
+		}
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
+		h1 {
+			font-family: 'TexasLED';
+			color: var(--primary-400);
+			font-weight: 400;
+		}
+		h2 {
+			margin-block: 1rem;
+			font-weight: 500;
+			font-size: var(--body-large);
+		}
+		h3 {
+			font-family: 'TexasLED';
+			text-transform: uppercase;
+			font-weight: 500;
+			color: var(--primary-500);
+			padding-bottom: 2rem;
+			font-size: var(--title-small);
+		}
+		h4 {
+			font-size: var(--title-small);
+			padding-bottom: 0.5rem;
+		}
+		h4 + div,
+		h4 + p {
+			padding-bottom: 1rem;
+		}
+		.hero-project {
+			margin-bottom: 4rem;
+		}
+		.figma-proto {
+			display: none;
+			border: 1px solid var(--neutral-950);
+		}
+		.content {
+			& section:not(:last-child) {
+				padding-bottom: 3rem;
+			}
+			& img {
+				height: auto;
+				/* max-width: 750px; */
+				margin-inline: auto;
+				margin-bottom: 1px;
+			}
+			& ul {
+				list-style: disc;
+				list-style-position: inside;
+				padding-top: 0.5rem;
+				& li {
+					padding-bottom: 0.2rem;
+				}
+			}
+		}
+
+		.content section > div {
+			padding-bottom: 2rem;
+		}
+	</style>
+</Layout>

@@ -1,6 +1,20 @@
 [
   {
     "id": 0,
+    "slug": "datapet",
+    "title": "DataPet",
+    "description": "The app for dog and cat owners who want to contribute to the health of their pets",
+    "cover": "/img/datapet-cover.png",
+    "cover_alt": "three iphones show datapet app screenshots",
+    "publishDate": "2022-05-15T18:21:59.511Z",
+    "duration": "Dec 2023 - Feb 2024",
+    "chips": ["Research", "Web Design"],
+    "tools": ["Figma", "Miro"],
+    "type": "Master's Degree",
+    "display": true
+  },
+  {
+    "id": 1,
     "slug": "moody-movie",
     "title": "Moody Movie",
     "description": "An app that suggest movies based on your mood",
@@ -13,7 +27,7 @@
     "type": "Personal"
   },
   {
-    "id": 1,
+    "id": 2,
     "slug": "travel-beyond",
     "title": "Travel Beyond",
     "description": "A landing page for a space travel agency",
@@ -23,23 +37,11 @@
     "duration": "Dec 2023 - Feb 2024",
     "chips": ["Web Design"],
     "tools": ["Figma"],
-    "type": "Personal"
+    "type": "Personal",
+    "display": true
   },
   {
-    "id": 2,
-    "slug": "insorvet",
-    "title": "Insorvet",
-    "description": "An e-commerce of medical veterinary instrumental",
-    "cover": "/img/insorvet-cover.webp",
-    "cover_alt": "Insorvet displayed in an IMac screen",
-    "publishDate": "2024-02-15T18:21:59.511Z",
-    "duration": "Dec 2023 - Feb 2024",
-    "chips": ["Research", "Web Design"],
-    "tools": ["Figma", "Miro"],
-    "type": "Company demand"
-  },
-  {
-    "id": 3,
+    "id": 4,
     "slug": "aventuralia",
     "title": "Aventuralia",
     "description": "A web for a travel agency that offers adventure trips",
@@ -49,6 +51,7 @@
     "duration": "Dec 2023 - Feb 2024",
     "chips": ["Research", "Web Design"],
     "tools": ["AdobeXD"],
-    "type": "Personal"
+    "type": "Personal",
+    "display": true
   }
 ]

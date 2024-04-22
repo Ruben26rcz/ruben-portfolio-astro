@@ -15,8 +15,7 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "astro": "^4.5.4",
-    "astro-page-insight": "^0.1.1",
-    "typescript": "^5.4.2"
+    "astro-page-insight": "^0.1.1"
   },
   "devDependencies": {
     "eslint-plugin-jsx-a11y": "^6.8.0",
