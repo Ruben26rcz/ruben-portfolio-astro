@@ -6,7 +6,7 @@ export default defineConfig({
 	site: 'https://www.rubencastillo.com',
 	redirects: {
 		// old resume URLs may still be shared (e.g. LinkedIn)
-		'/documents/cv-ruben-castillo ux-ui-2024.pdf': '/cv.pdf',
+		'/documents/cv-ruben-castillo%20ux-ui-2024.pdf': '/cv.pdf',
 	},
 	adapter: vercel({
 		webAnalytics: { enabled: true },
