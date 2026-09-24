@@ -4,6 +4,10 @@ import mdx from '@astrojs/mdx'
 
 export default defineConfig({
 	site: 'https://www.rubencastillo.com',
+	redirects: {
+		// old resume URLs may still be shared (e.g. LinkedIn)
+		'/documents/cv-ruben-castillo ux-ui-2024.pdf': '/cv.pdf',
+	},
 	adapter: vercel({
 		webAnalytics: { enabled: true },
 	}),
