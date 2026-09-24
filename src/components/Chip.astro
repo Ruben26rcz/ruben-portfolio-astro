@@ -1,14 +1,13 @@
 ---
-const { avatar, src, alt_img } = Astro.props
+const { avatar, src } = Astro.props
 interface Props {
 	avatar: boolean
 	src?: string
-	alt_img?: string | undefined
 }
 ---
 
 <span class='chip'>
-	{avatar && <img src={src} alt={alt_img} />}
+	{avatar && <img src={src} alt='' />}
 	<slot />
 </span>
 

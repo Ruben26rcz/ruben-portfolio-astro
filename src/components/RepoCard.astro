@@ -33,7 +33,7 @@ const groups = [
 									{items.map((chip) => {
 										const tech = technologiesImg.find((t) => t.name === chip)
 										return (
-											<Chip avatar={true} src={tech?.img} alt_img={tech?.alt_img}>
+											<Chip avatar={true} src={tech?.img}>
 												{chip}
 											</Chip>
 										)
@@ -50,8 +50,8 @@ const groups = [
 		{
 			links.map((link, index) => (
 				<li>
-					<a class={index === 0 ? 'primary-button' : 'secondary-button'} href={link.url} target='_blank'>
-						<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' text-anchor='middle'>
+					<a class={index === 0 ? 'primary-button' : 'secondary-button'} href={link.url} target='_blank' rel='noopener'>
+						<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
 							<g transform='translate(3, 2)'>
 								<path
 									fill-rule='evenodd'
@@ -65,6 +65,7 @@ const groups = [
 							</g>
 						</svg>
 						{link.name}
+						<span class='sr-only'> (opens in a new tab)</span>
 					</a>
 				</li>
 			))
@@ -88,7 +89,7 @@ const groups = [
 	h2 {
 		display: flex;
 		gap: 0.5rem;
-		font-family: 'TexasLED';
+		font-family: var(--font-led);
 		font-weight: 400;
 		color: var(--primary-400);
 		& img {

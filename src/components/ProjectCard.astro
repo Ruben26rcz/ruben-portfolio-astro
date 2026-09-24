@@ -14,7 +14,7 @@ const { title, chips, description, cover, coverAlt } = Astro.props.work.data
 
 <a href={`/work/${slug}`} class='project-card'>
 	<Image class='card-image' src={cover} alt={coverAlt} widths={[480, 960]} sizes='(width >= 768px) 480px, 100vw' />
-	<h2>{title.toUpperCase()} <img src={arrowDiagonal.src} alt='diagonal pixel arrow' width='20' height='20' /></h2>
+	<h2>{title.toUpperCase()} <img src={arrowDiagonal.src} alt='' width='20' height='20' /></h2>
 	<div class='chips'>
 		{chips.map((chip) => <Chip avatar={false}>{chip}</Chip>)}
 	</div>
@@ -43,7 +43,7 @@ const { title, chips, description, cover, coverAlt } = Astro.props.work.data
 	h2 {
 		display: flex;
 		gap: 0.5rem;
-		font-family: 'TexasLED';
+		font-family: var(--font-led);
 		font-weight: 400;
 		color: var(--primary-400);
 		& img {

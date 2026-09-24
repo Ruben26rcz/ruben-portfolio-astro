@@ -14,7 +14,7 @@ const { Content } = await render(work)
 ---
 
 <Layout title={`Ruben UX/UI - ${work.data.title}`} description={work.data.description}>
-	<main class='wrapper'>
+	<main id='main' class='wrapper'>
 		<ProjectHero work={work.data} />
 		<article class='content'>
 			<Content />

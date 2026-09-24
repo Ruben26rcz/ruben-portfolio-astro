@@ -1,19 +1,26 @@
 ---
 import HambIcon from '@/components/HambIcon.astro'
-const pathname = Astro.url.pathname
-const currentPath = pathname.slice(1) // remove the first "/"
+import { isCurrent, navLinks } from '@/lib/nav'
 ---
 
 <div class='nav-container'>
-	<button class='hamb-icon' aria-label='Hamburger icon'>
+	<button class='hamb-icon' aria-label='Menu' aria-expanded='false' aria-controls='main-nav'>
 		<HambIcon />
 	</button>
-	<nav>
+	<nav id='main-nav' aria-label='Main'>
 		<ul>
-			<li><a class={currentPath === '' ? 'active' : ''} href='/'>Works</a></li>
-			<li><a class={currentPath === 'codeground' ? 'active' : ''} href='/codeground'>CodeGround</a></li>
-			<li><a class={currentPath === 'about' ? 'active' : ''} href='/about'>About</a></li>
-			<li><a class={currentPath === 'contact' ? 'active' : ''} href='/contact'>Contact</a></li>
+			{
+				navLinks.map(({ href, label }) => {
+					const current = isCurrent(href, Astro.url.pathname)
+					return (
+						<li>
+							<a class:list={{ active: current }} href={href} aria-current={current ? 'page' : undefined}>
+								{label}
+							</a>
+						</li>
+					)
+				})
+			}
 		</ul>
 	</nav>
 	<div class='background-overlay'></div>
@@ -37,13 +44,17 @@ const currentPath = pathname.slice(1) // remove the first "/"
 		padding-block: 3rem;
 		transform: scale(1, 0);
 		transform-origin: top center;
-		transition: transform 0.3s ease-in-out;
+		visibility: hidden;
+		transition:
+			transform 0.3s ease-in-out,
+			visibility 0.3s;
 		z-index: 999;
 	}
 
 	.show-nav {
 		background-color: var(--neutral-950);
 		transform: scale(1, 1);
+		visibility: visible;
 
 		& ul {
 			top: 0;
@@ -86,6 +97,7 @@ const currentPath = pathname.slice(1) // remove the first "/"
 
 		nav {
 			transform: scale(1, 1);
+			visibility: visible;
 			background-color: unset;
 			position: static;
 			height: unset;
@@ -109,40 +121,34 @@ const currentPath = pathname.slice(1) // remove the first "/"
 </style>
 
 <script>
-	// When document is loaded, add event listener to the button and execute the function to toggle the menu
-	document.addEventListener('DOMContentLoaded', function () {
-		const button: HTMLElement | null = document.querySelector('.hamb-icon')
-		if (button) {
-			button.addEventListener('click', toggleMenu)
+	const button = document.querySelector<HTMLButtonElement>('.hamb-icon')
+	const nav = document.querySelector<HTMLElement>('#main-nav')
+	const overlay = document.querySelector<HTMLElement>('.background-overlay')
+	const icon = button?.querySelector('.ham')
+
+	function setMenu(open: boolean) {
+		if (!button || !nav || !overlay) return
+		button.setAttribute('aria-expanded', String(open))
+		icon?.classList.toggle('active', open)
+		nav.classList.toggle('show-nav', open)
+		overlay.classList.toggle('show-background-overlay', open)
+		document.body.classList.toggle('no-scroll', open)
+	}
+
+	const isOpen = () => button?.getAttribute('aria-expanded') === 'true'
+
+	button?.addEventListener('click', () => setMenu(!isOpen()))
+	overlay?.addEventListener('click', () => setMenu(false))
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape' && isOpen()) {
+			setMenu(false)
+			button?.focus()
 		}
 	})
 
-	// Function to toggle the menu
-	function toggleMenu(): void {
-		const nav: HTMLElement | null = document.querySelector('nav')
-		const bgOverlay: HTMLElement | null = document.querySelector('.background-overlay')
-		const body: HTMLElement | null = document.body
-		const header: HTMLElement | null = document.querySelector('header')
-		if (nav && bgOverlay) {
-			nav?.classList.toggle('show-nav')
-			header?.classList.toggle('fill-white')
-			bgOverlay?.classList.toggle('show-background-overlay')
-			body?.classList.toggle('no-scroll')
-		}
-	}
-
-	// When the window is resized to desktop close hamburger menu
-	window.addEventListener('resize', function () {
-		if (window.innerWidth >= 1024) {
-			const nav: HTMLElement | null = document.querySelector('nav')
-			const bgOverlay: HTMLElement | null = document.querySelector('.background-overlay')
-			const body: HTMLElement | null = document.body
-
-			if (nav && bgOverlay) {
-				nav?.classList.remove('show-nav')
-				bgOverlay?.classList.remove('show-background-overlay')
-				body?.classList.remove('no-scroll')
-			}
-		}
+	// Close the mobile menu when resizing to desktop
+	window.matchMedia('(width >= 1024px)').addEventListener('change', (event) => {
+		if (event.matches) setMenu(false)
 	})
 </script>

@@ -2,10 +2,33 @@
 import { Image } from 'astro:assets'
 import Layout from '@/layouts/Layout.astro'
 import airplane from '@/assets/img/airplane-departure-emoji.png'
+
+const skillGroups = [
+	{
+		title: 'Soft Skills',
+		skills: [
+			{ name: 'Communication', level: 4 },
+			{ name: 'Leadership', level: 4 },
+			{ name: 'Time Management', level: 4 },
+			{ name: 'Curiosity', level: 5 },
+		],
+	},
+	{
+		title: 'Hard Skills',
+		skills: [
+			{ name: 'Visual Design', level: 5 },
+			{ name: 'Programming', level: 4 },
+			{ name: 'Research', level: 3 },
+			{ name: '3D Modeling', level: 3 },
+		],
+	},
+]
+const maxLevel = 5
 ---
 
 <Layout title='Ruben UX/UI - Contact' description='A UX/UI designer based in Barcelona'>
-	<main class='wrapper'>
+	<main id='main' class='wrapper'>
+		<h1 class='sr-only'>Contact</h1>
 		<section>
 			<div class='boarding-pass__header'>
 				<div class='boarding-pass__place'>
@@ -31,106 +54,36 @@ import airplane from '@/assets/img/airplane-departure-emoji.png'
 						</li>
 						<li>
 							<p class='label'>email ✉️</p>
-							<p>ruben26rcz@gmail.com</p>
+							<p><a class='email' href='mailto:ruben26rcz@gmail.com'>ruben26rcz@gmail.com</a></p>
 						</li>
 					</ul>
-					<img class='qr' src='/svg/qr-code-rounded.svg' alt='qr contact code' />
+					<img class='qr' src='/svg/qr-code-rounded.svg' alt='QR code with contact details' />
 				</div>
 
-				<div class='skills'>
-					<h3>Soft Skills</h3>
-					<div class='skill'>
-						<ul class='bullets'>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-false'></li>
-						</ul>
-						<p>Communication</p>
-					</div>
-					<div class='skill'>
-						<ul class='bullets'>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-false'></li>
-						</ul>
-						<p>Leadership</p>
-					</div>
-					<div class='skill'>
-						<ul class='bullets'>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-false'></li>
-						</ul>
-						<p>Time Management</p>
-					</div>
-
-					<div class='skill'>
-						<ul class='bullets'>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-						</ul>
-						<p>Curiosity</p>
-					</div>
-				</div>
-				<div class='skills'>
-					<h3>Hard Skills</h3>
-					<div class='skill'>
-						<ul class='bullets'>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-						</ul>
-						<p>Visual Design</p>
-					</div>
-					<div class='skill'>
-						<ul class='bullets'>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-false'></li>
-						</ul>
-						<p>Programming</p>
-					</div>
-					<div class='skill'>
-						<ul class='bullets'>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-false'></li>
-							<li class='bullet-false'></li>
-						</ul>
-						<p>Research</p>
-					</div>
-					<div class='skill'>
-						<ul class='bullets'>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-true'></li>
-							<li class='bullet-false'></li>
-							<li class='bullet-false'></li>
-						</ul>
-						<p>3D Modeling</p>
-					</div>
-				</div>
+				{
+					skillGroups.map(({ title, skills }) => (
+						<div class='skills'>
+							<h2>{title}</h2>
+							{skills.map(({ name, level }) => (
+								<div class='skill'>
+									<div class='bullets' role='img' aria-label={`${name}: ${level} out of ${maxLevel}`}>
+										{Array.from({ length: maxLevel }, (_, i) => (
+											<span class={i < level ? 'bullet-true' : 'bullet-false'} />
+										))}
+									</div>
+									<p aria-hidden='true'>{name}</p>
+								</div>
+							))}
+						</div>
+					))
+				}
 			</div>
 		</section>
 	</main>
 </Layout>
 
 <style>
-	h3 {
+	h2 {
 		font-size: var(--body-medium);
 		padding-bottom: 1rem;
 	}
@@ -198,6 +151,11 @@ import airplane from '@/assets/img/airplane-departure-emoji.png'
 		height: 7px;
 		border-radius: 100px;
 		background-color: var(--neutral-100);
+	}
+	.email {
+		text-decoration: underline;
+		text-underline-offset: 0.15rem;
+		overflow-wrap: anywhere;
 	}
 	.qr {
 		max-height: 200px;

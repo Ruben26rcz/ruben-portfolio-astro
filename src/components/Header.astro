@@ -9,8 +9,8 @@ const poster = await getImage({ src: memojiPoster, width: 280 })
 ---
 
 <header class='header wrapper'>
-	<a href='/' aria-label='Go to home button'>
-		<video autoplay muted poster={poster.src}>
+	<a href='/' aria-label='Home'>
+		<video autoplay muted playsinline aria-hidden='true' poster={poster.src}>
 			<source src={memojiGIF} type='video/webm' />
 			<track src={captionsUrl} kind='captions' srclang='en' label='english-captions' />
 		</video>

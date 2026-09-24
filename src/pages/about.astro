@@ -5,7 +5,7 @@ import Hobbies from '@/sections/Hobbies.astro'
 ---
 
 <Layout title='Ruben UX/UI - About' description='A UX/UI designer based in Barcelona'>
-	<main>
+	<main id='main'>
 		<section class='wrapper'>
 			<h1>🤙 Hey, nice to meet you!</h1>
 			<p class='description'>
@@ -16,9 +16,9 @@ import Hobbies from '@/sections/Hobbies.astro'
 				coding.
 			</p>
 			<p class='link'>
-				Check my <a href='/documents/cv-ruben-castillo ux-ui-2024.pdf' target='_blank'>Resume</a> or <a
+				Check my <a href='/documents/cv-ruben-castillo ux-ui-2024.pdf' target='_blank' rel='noopener'>Resume<span class='sr-only'> (opens in a new tab)</span></a> or <a
 					href='https://www.linkedin.com/in/rubenzambrana'
-					target='_blank'>LinkedIn</a
+					target='_blank' rel='noopener'>LinkedIn<span class='sr-only'> (opens in a new tab)</span></a
 				>
 			</p>
 		</section>

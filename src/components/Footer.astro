@@ -1,26 +1,34 @@
 ---
+import { isCurrent, navLinks } from '@/lib/nav'
+
 const currentDate = new Date()
 const currentYear = currentDate.getFullYear()
-const pathname = Astro.url.pathname
-const currentPath = pathname.slice(1) // remove the first "/"
 ---
 
 <footer class='wrapper'>
 	<hr />
 	<div class='footer-content'>
-		<nav>
+		<nav aria-label='Social'>
 			<ul>
-				<li><a href='/documents/cv-ruben-castillo ux-ui-2024.pdf' target='_blank'>Resume</a></li>
-				<li><a href='https://www.linkedin.com/in/rubenzambrana' target='_blank'>LinkedIn</a></li>
-				<li><a href='https://www.github.com/Ruben26rcz' target='_blank'>Github</a></li>
+				<li><a href='/documents/cv-ruben-castillo ux-ui-2024.pdf' target='_blank' rel='noopener'>Resume<span class='sr-only'> (opens in a new tab)</span></a></li>
+				<li><a href='https://www.linkedin.com/in/rubenzambrana' target='_blank' rel='noopener'>LinkedIn<span class='sr-only'> (opens in a new tab)</span></a></li>
+				<li><a href='https://www.github.com/Ruben26rcz' target='_blank' rel='noopener'>Github<span class='sr-only'> (opens in a new tab)</span></a></li>
 			</ul>
 		</nav>
-		<nav>
+		<nav aria-label='Footer'>
 			<ul>
-				<li><a class={currentPath === '' ? 'active' : ''} href='/'>Works</a></li>
-				<li><a class={currentPath === 'codeground' ? 'active' : ''} href='/codeground'>CodeGround</a></li>
-				<li><a class={currentPath === 'about' ? 'active' : ''} href='/about'>About</a></li>
-				<li><a class={currentPath === 'contact' ? 'active' : ''} href='/contact'>Contact</a></li>
+				{
+					navLinks.map(({ href, label }) => {
+						const current = isCurrent(href, Astro.url.pathname)
+						return (
+							<li>
+								<a class:list={{ active: current }} href={href} aria-current={current ? 'page' : undefined}>
+									{label}
+								</a>
+							</li>
+						)
+					})
+				}
 			</ul>
 		</nav>
 	</div>
