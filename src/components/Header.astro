@@ -2,11 +2,15 @@
 import Nav from '@/components/Nav.astro'
 import memojiGIF from '@/assets/video/memoji-ruben.webm'
 import captionsUrl from '@/assets/captions/captions_en.vtt?url'
+import { getImage } from 'astro:assets'
+import memojiPoster from '@/assets/img/memoji-ruben.webp'
+
+const poster = await getImage({ src: memojiPoster, width: 280 })
 ---
 
 <header class='header wrapper'>
 	<a href='/' aria-label='Go to home button'>
-		<video autoplay muted poster='/img/memoji-ruben.webp'>
+		<video autoplay muted poster={poster.src}>
 			<source src={memojiGIF} type='video/webm' />
 			<track src={captionsUrl} kind='captions' srclang='en' label='english-captions' />
 		</video>

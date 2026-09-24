@@ -1,38 +1,38 @@
 ---
-const work = Astro.props.work
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
 import Chip from '@/components/Chip.astro'
-const formatTools = (tools: string[]) => {
-	if (!tools || tools.length === 0) return ''
-	if (tools.length === 1) return tools[0]
-	if (tools.length === 2) return tools.join(' and ')
 
-	const lastTool = tools.at(-1)
-	return tools.slice(0, -1).join(', ') + ', and ' + lastTool
+interface Props {
+	work: CollectionEntry<'works'>['data']
 }
+
+const { work } = Astro.props
+const tools = new Intl.ListFormat('en', { type: 'conjunction' }).format(work.tools)
 ---
 
 <section>
 	<div class='title'>
-		<img class='icon' src={work && work.appIcon} alt={`${work.title} app icon`} />
-		<h1>{work && work.title}</h1>
+		<img class='icon' src={work.appIcon} alt={`${work.title} app icon`} width='56' height='56' />
+		<h1>{work.title}</h1>
 	</div>
-	<h2>{work && work.description}</h2>
+	<h2>{work.description}</h2>
 	<div>
-		{work && work.chips.map((chip: string) => <Chip avatar={false}>{chip}</Chip>)}
+		{work.chips.map((chip) => <Chip avatar={false}>{chip}</Chip>)}
 	</div>
-	<img class='cover' src={work && work.cover} alt={work && work.cover_alt} />
+	<Image class='cover' src={work.cover} alt={work.coverAlt} widths={[640, 1024, 1536]} sizes='(width >= 1024px) 1024px, 100vw' loading='eager' fetchpriority='high' />
 	<ul>
 		<li>
 			<p>📆 Duration</p>
-			<p>{work && work.duration}</p>
+			<p>{work.duration}</p>
 		</li>
 		<li>
 			<p>⚙️ Tools</p>
-			<p>{formatTools(work?.tools)}</p>
+			<p>{tools}</p>
 		</li>
 		<li>
 			<p>🗂️ Type of Project</p>
-			<p>{work && work.type}</p>
+			<p>{work.type}</p>
 		</li>
 	</ul>
 </section>
@@ -64,6 +64,7 @@ const formatTools = (tools: string[]) => {
 	}
 	.cover {
 		width: 100%;
+		height: auto;
 		margin-block: 1.5rem;
 	}
 	ul {

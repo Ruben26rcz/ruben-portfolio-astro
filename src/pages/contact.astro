@@ -1,5 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import Layout from '@/layouts/Layout.astro'
+import airplane from '@/assets/img/airplane-departure-emoji.png'
 ---
 
 <Layout title='Ruben UX/UI - Contact' description='A UX/UI designer based in Barcelona'>
@@ -10,7 +12,7 @@ import Layout from '../layouts/Layout.astro'
 					<p class='acronym'>UXI</p>
 					<p class='acronym-description'>UX/UI Designer</p>
 				</div>
-				<img class='airplane' src='/img/airplane-departure-emoji.png' alt='airplane emoji' />
+				<Image class='airplane' src={airplane} alt='airplane emoji' height={72} densities={[1, 2]} />
 				<div>
 					<p class='acronym'>FSD</p>
 					<p class='acronym-description'>Fullstack Developer</p>

@@ -1,23 +1,29 @@
 ---
-
+import { Image } from 'astro:assets'
+import rubenFlip from '@/assets/img/ruben-flip.webp'
+import castilloFlip from '@/assets/img/castillo-flip.webp'
 ---
 
 <section class='wrapper'>
 	<h1>Hello! 👋 I’m</h1>
 	<div>
-		<img
+		<Image
 			class='ruben-flip'
-			src='/img/ruben-flip.webp'
+			src={rubenFlip}
 			alt='airport flipping letters displaying Ruben word'
-			width='1100'
-			height='200'
+			widths={[550, 1100]}
+			sizes='(width >= 1024px) 660px, 65vw'
+			loading='eager'
+			fetchpriority='high'
 		/>
-		<img
+		<Image
 			class='castillo-flip'
-			src='/img/castillo-flip.webp'
+			src={castilloFlip}
 			alt='airport flipping letters displaying Castillo word'
-			width='1700'
-			height='200'
+			widths={[850, 1700]}
+			sizes='(width >= 1024px) 1024px, 100vw'
+			loading='eager'
+			fetchpriority='high'
 		/>
 	</div>
 	<p>

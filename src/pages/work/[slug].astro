@@ -1,0 +1,61 @@
+---
+import type { GetStaticPaths } from 'astro'
+import { getCollection, render } from 'astro:content'
+import Layout from '@/layouts/Layout.astro'
+import ProjectHero from '@/sections/ProjectHero.astro'
+
+export const getStaticPaths = (async () => {
+	const works = await getCollection('works', ({ data }) => !data.draft)
+	return works.map((work) => ({ params: { slug: work.id }, props: { work } }))
+}) satisfies GetStaticPaths
+
+const { work } = Astro.props
+const { Content } = await render(work)
+---
+
+<Layout title={`Ruben UX/UI - ${work.data.title}`} description={work.data.description}>
+	<main class='wrapper'>
+		<ProjectHero work={work.data} />
+		<article class='content'>
+			<Content />
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.content {
+		& :global(h3) {
+			font-size: var(--title-small);
+			padding-bottom: 0.5rem;
+		}
+		& :global(h4) {
+			font-size: var(--title-small);
+			padding-bottom: 0.5rem;
+		}
+		& :global(:is(h3, h4):not(:first-child)) {
+			padding-top: 2rem;
+		}
+		& :global(p) {
+			padding-bottom: 1rem;
+		}
+		& :global(img) {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+			margin-inline: auto;
+			margin-bottom: 1px;
+		}
+		& :global(ul) {
+			list-style: disc;
+			list-style-position: inside;
+			padding-bottom: 1rem;
+			& :global(li) {
+				padding-bottom: 0.2rem;
+			}
+		}
+		& :global(.figma-prototype) {
+			margin-bottom: 2rem;
+		}
+	}
+</style>

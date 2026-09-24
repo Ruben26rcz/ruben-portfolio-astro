@@ -1,123 +1,46 @@
 ---
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
 import Chip from '@/components/Chip.astro'
 import '@/styles/animations.css'
 import technologiesImg from '@/data/technologies.json'
-interface Technology {
-	front: string[]
-	back: string[]
-	database: string[]
-	testing: string[]
-}
-
-interface Links {
-	name: string
-	url: string
-	icon: string
-}
-
-interface Repo {
-	id: number
-	title: string
-	description: string
-	cover: string
-	cover_alt: string
-	publishDate: string
-	technologies: Technology
-	links: Links[]
-}
-
 interface Props {
-	repo: Repo
+	repo: CollectionEntry<'repos'>['data']
 }
 
-const { title, description, cover, cover_alt, technologies, links } = Astro.props.repo
+const { title, description, cover, coverAlt, technologies, links } = Astro.props.repo
+const groups = [
+	{ label: 'Frontend', items: technologies.front },
+	{ label: 'Backend', items: technologies.back },
+	{ label: 'Database', items: technologies.database },
+	{ label: 'Testing', items: technologies.testing },
+]
 ---
 
 <div class='repo-card'>
 	<div>
-		<img
-			class='card-image'
-			src={cover}
-			alt={cover_alt || ''}
-			loading='lazy'
-			decoding='async'
-			width='412'
-			height='344'
-		/>
+		<Image class='card-image' src={cover} alt={coverAlt} widths={[480, 960]} sizes='(width >= 768px) 480px, 100vw' />
 		<div class='card-content'>
 			<h2>{title.toUpperCase()}</h2>
 			<div class='technologies'>
 				{
-					technologies.front.length > 0 && (
-						<div>
-							<p>Frontend</p>
-							<div class='chips'>
-								{technologies.front.map((chip: string) => (
-									<Chip
-										avatar={true}
-										src={technologiesImg.find((tech: any) => tech.name === chip)?.img}
-										alt_img={technologiesImg.find((tech: any) => tech.name === chip)?.alt_img}
-									>
-										{chip}
-									</Chip>
-								))}
+					groups
+						.filter(({ items }) => items.length > 0)
+						.map(({ label, items }) => (
+							<div>
+								<p>{label}</p>
+								<div class='chips'>
+									{items.map((chip) => {
+										const tech = technologiesImg.find((t) => t.name === chip)
+										return (
+											<Chip avatar={true} src={tech?.img} alt_img={tech?.alt_img}>
+												{chip}
+											</Chip>
+										)
+									})}
+								</div>
 							</div>
-						</div>
-					)
-				}
-				{
-					technologies.back.length > 0 && (
-						<div>
-							<p>Backend</p>
-							<div class='chips'>
-								{technologies.back.map((chip: string) => (
-									<Chip
-										avatar={true}
-										src={technologiesImg.find((tech: any) => tech.name === chip)?.img}
-										alt_img={technologiesImg.find((tech: any) => tech.name === chip)?.alt_img}
-									>
-										{chip}
-									</Chip>
-								))}
-							</div>
-						</div>
-					)
-				}
-				{
-					technologies.database.length > 0 && (
-						<div>
-							<p>Database</p>
-							<div class='chips'>
-								{technologies.database.map((chip: string) => (
-									<Chip
-										avatar={true}
-										src={technologiesImg.find((tech: any) => tech.name === chip)?.img}
-										alt_img={technologiesImg.find((tech: any) => tech.name === chip)?.alt_img}
-									>
-										{chip}
-									</Chip>
-								))}
-							</div>
-						</div>
-					)
-				}
-				{
-					technologies.testing.length > 0 && (
-						<div>
-							<p>Testing</p>
-							<div class='chips'>
-								{technologies.testing.map((chip: string) => (
-									<Chip
-										avatar={true}
-										src={technologiesImg.find((tech: any) => tech.name === chip)?.img}
-										alt_img={technologiesImg.find((tech: any) => tech.name === chip)?.alt_img}
-									>
-										{chip}
-									</Chip>
-								))}
-							</div>
-						</div>
-					)
+						))
 				}
 			</div>
 			<p class='description'>{description}</p>
@@ -125,7 +48,7 @@ const { title, description, cover, cover_alt, technologies, links } = Astro.prop
 	</div>
 	<ul class='buttons'>
 		{
-			links.map((link: Links, index: number) => (
+			links.map((link, index) => (
 				<li>
 					<a class={index === 0 ? 'primary-button' : 'secondary-button'} href={link.url} target='_blank'>
 						<svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' text-anchor='middle'>

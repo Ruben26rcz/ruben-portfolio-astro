@@ -1,6 +1,8 @@
 ---
 import ProjectCard from '@/components/ProjectCard.astro'
-import works from '@/data/works.json'
+import { getCollection } from 'astro:content'
+
+const works = (await getCollection('works', ({ data }) => !data.draft)).sort((a, b) => a.data.order - b.data.order)
 ---
 
 <section class='wrapper'>

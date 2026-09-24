@@ -1,0 +1,42 @@
+---
+interface Props {
+	/** figma.com/embed URL shown inline on large screens */
+	embedUrl: string
+	/** figma.com/proto URL opened in a new tab on small screens */
+	url: string
+	label: string
+	height?: number
+	/** viewport width from which the embed replaces the link */
+	breakpoint?: 'md' | 'lg'
+}
+
+const { embedUrl, url, label, height = 656, breakpoint = 'md' } = Astro.props
+---
+
+<div class:list={['figma-prototype', breakpoint]}>
+	<iframe title={label} width='100%' height={height} src={embedUrl} loading='lazy' allowfullscreen></iframe>
+	<a class='primary-button' href={url} target='_blank' rel='noopener'>{label}</a>
+</div>
+
+<style>
+	iframe {
+		display: none;
+		border: 1px solid var(--neutral-950);
+	}
+	@media (width >= 768px) {
+		.md iframe {
+			display: block;
+		}
+		.md a {
+			display: none;
+		}
+	}
+	@media (width >= 1024px) {
+		.lg iframe {
+			display: block;
+		}
+		.lg a {
+			display: none;
+		}
+	}
+</style>

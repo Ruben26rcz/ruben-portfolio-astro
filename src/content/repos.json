@@ -1,16 +1,32 @@
 [
   {
-    "id": 0,
+    "id": "computech",
+    "order": 0,
     "title": "Computech",
     "description": "A responsive marketplace of gaming products for demanding gamers with their setup. UI designed by me 🙌",
-    "cover": "img/computech-cover.png",
-    "cover_alt": "Screenshot of computech",
+    "cover": "../assets/img/computech-cover.png",
+    "coverAlt": "Screenshot of computech",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
-      "front": ["React", "JavaScript", "Ant Design", "Stripe", "Cloudinary"],
-      "back": ["Express (nodeJS)", "JWT", "Stripe API"],
-      "database": ["MongoDB"],
-      "testing": ["Cypress", "Jest"]
+      "front": [
+        "React",
+        "JavaScript",
+        "Ant Design",
+        "Stripe",
+        "Cloudinary"
+      ],
+      "back": [
+        "Express (nodeJS)",
+        "JWT",
+        "Stripe API"
+      ],
+      "database": [
+        "MongoDB"
+      ],
+      "testing": [
+        "Cypress",
+        "Jest"
+      ]
     },
     "links": [
       {
@@ -26,16 +42,26 @@
     ]
   },
   {
-    "id": 1,
+    "id": "menubot",
+    "order": 1,
     "title": "MenuBot",
     "description": "A webapp for managing orders via telegram",
-    "cover": "img/menubot-cover.png",
-    "cover_alt": "Screenshot of MenuBot",
+    "cover": "../assets/img/menubot-cover.png",
+    "coverAlt": "Screenshot of MenuBot",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
-      "front": ["React", "TypeScript", "Ant Design"],
-      "back": ["Express (nodeJS)", "Telegram API"],
-      "database": ["MongoDB"],
+      "front": [
+        "React",
+        "TypeScript",
+        "Ant Design"
+      ],
+      "back": [
+        "Express (nodeJS)",
+        "Telegram API"
+      ],
+      "database": [
+        "MongoDB"
+      ],
       "testing": []
     },
     "links": [
@@ -47,16 +73,23 @@
     ]
   },
   {
-    "id": 2,
+    "id": "to-do-list",
+    "order": 2,
     "title": "To Do List",
     "description": "Another todo list webapp for manage daily tasks",
-    "cover": "img/todo-cover.png",
-    "cover_alt": "Screenshot of To Do app",
+    "cover": "../assets/img/todo-cover.png",
+    "coverAlt": "Screenshot of To Do app",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
-      "front": ["React"],
-      "back": ["Express (nodeJS)"],
-      "database": ["MongoDB"],
+      "front": [
+        "React"
+      ],
+      "back": [
+        "Express (nodeJS)"
+      ],
+      "database": [
+        "MongoDB"
+      ],
       "testing": []
     },
     "links": [
@@ -73,14 +106,18 @@
     ]
   },
   {
-    "id": 3,
+    "id": "calculator",
+    "order": 3,
     "title": "Calculator",
     "description": "Both React and Vanilla JS",
-    "cover": "img/calculator-cover.png",
-    "cover_alt": "screenshot of the calculator",
+    "cover": "../assets/img/calculator-cover.png",
+    "coverAlt": "screenshot of the calculator",
     "publishDate": "2024-02-15T18:21:59.511Z",
     "technologies": {
-      "front": ["React", "Vanilla JavaScript"],
+      "front": [
+        "React",
+        "Vanilla JavaScript"
+      ],
       "back": [],
       "database": [],
       "testing": []
