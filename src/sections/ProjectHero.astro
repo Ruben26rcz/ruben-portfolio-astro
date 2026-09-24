@@ -6,8 +6,8 @@ const formatTools = (tools: string[]) => {
 	if (tools.length === 1) return tools[0]
 	if (tools.length === 2) return tools.join(' and ')
 
-	const lastTool = tools.pop()
-	return tools.join(', ') + ', and ' + lastTool
+	const lastTool = tools.at(-1)
+	return tools.slice(0, -1).join(', ') + ', and ' + lastTool
 }
 ---
 

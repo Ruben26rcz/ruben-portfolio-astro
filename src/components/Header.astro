@@ -1,13 +1,14 @@
 ---
 import Nav from '@/components/Nav.astro'
 import memojiGIF from '@/assets/video/memoji-ruben.webm'
+import captionsUrl from '@/assets/captions/captions_en.vtt?url'
 ---
 
 <header class='header wrapper'>
 	<a href='/' aria-label='Go to home button'>
 		<video autoplay muted poster='/img/memoji-ruben.webp'>
 			<source src={memojiGIF} type='video/webm' />
-			<track src='/assets/captions/captions_en.vtt' kind='captions' srclang='en' label='english-captions' />
+			<track src={captionsUrl} kind='captions' srclang='en' label='english-captions' />
 		</video>
 	</a>
 	<Nav />

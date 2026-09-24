@@ -1,6 +1,6 @@
 ---
 import HambIcon from '@/components/HambIcon.astro'
-const pathname = new URL(Astro.request.url).pathname
+const pathname = Astro.url.pathname
 const currentPath = pathname.slice(1) // remove the first "/"
 ---
 
@@ -139,8 +139,8 @@ const currentPath = pathname.slice(1) // remove the first "/"
 			const body: HTMLElement | null = document.body
 
 			if (nav && bgOverlay) {
-				nav?.classList.remove('show')
-				bgOverlay?.classList.remove('show')
+				nav?.classList.remove('show-nav')
+				bgOverlay?.classList.remove('show-background-overlay')
 				body?.classList.remove('no-scroll')
 			}
 		}

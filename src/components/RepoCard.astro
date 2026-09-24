@@ -26,6 +26,10 @@ interface Repo {
 	links: Links[]
 }
 
+interface Props {
+	repo: Repo
+}
+
 const { title, description, cover, cover_alt, technologies, links } = Astro.props.repo
 ---
 
@@ -206,8 +210,5 @@ const { title, description, cover, cover_alt, technologies, links } = Astro.prop
 		margin-bottom: 2rem;
 		height: 344px;
 		width: 100%;
-	}
-	.card-image[Attributes Style] {
-		aspect-ratio: auto 103/86;
 	}
 </style>
